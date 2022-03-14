@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+}
+
+.img1{
+    height: 625px;
+}
+.row {
+    display: flex;
+    min-height: 625px;
+}
+  
+
+.left{
+    flex: 75%;
+    height: auto;
+    background-color: red;
+}
+
+.right{
+    flex: 25%;
+    text-align: center;
+}
