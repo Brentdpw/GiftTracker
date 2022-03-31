@@ -20,7 +20,7 @@ Calender_Date date
 );
 
 create table user(
-persoon_id int not null unique AUTO_INCREMENT,
+user_id int not null unique AUTO_INCREMENT,
 firstnaam varchar(100) not null,
 achternaam varchar(100) not null,
 leeftijd int not null,
