@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
-    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./assets/css/login.css">
+<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
     <div class="header">
         <h1>
             GiftTracker
@@ -18,10 +13,13 @@
     </div>
 
     <div class="row">
-        <div class="column left">
+        <div class="column leftColumn">
+            <h2>Column 1</h2>
+            <p>Some text..</p>
         </div>
-        <div class="column right">
-            <div class="input-field">
+        <div class="column rightColumn">
+            
+                <div class="input-field">
                     <label for="Username" class="input-label">
                         <br>
                         Username
@@ -57,11 +55,9 @@
                         Sign up
                     </button>
                 </a>
-            </div>
         </div>
+
     </div>
-
-
 
 </body>
 </html>
