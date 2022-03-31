@@ -41,7 +41,18 @@
                 </div>
 
                 <div class="input-field">
-                    <label for="Gender" class="input-label">
+                    <label for="age" class="input-label">
+                        <br>
+                        Age
+                        <br>
+                    </label>
+                    <input type="number" name="age" id="age" class="input" placeholder="Select your age" required>
+
+                    <br>
+                </div>
+
+                <div class="input-field">
+                    <label for="gender" class="input-label">
                         <br>
                         Gender
                         <br>
@@ -49,15 +60,15 @@
 
                     <br>
 
-                    <label for="Gender" class="radio">
+                    <label for="gender" class="radio">
                         Male
-                        <input type="radio" name="Gender" id="Gender" class="input" value="Male" required>
+                        <input type="radio" name="gender" id="gender" class="input" value="Male" required>
                         <div class="radio__radio"></div>
                     </label>
 
-                    <label for="Gender" class="radio">
+                    <label for="gender" class="radio">
                         Female
-                        <input type="radio" name="Gender" id="Gender" class="input" value="Female" required> 
+                        <input type="radio" name="gender" id="gender" class="input" value="Female" required> 
                         <div class="radio__radio"></div>
                     </label>
   
@@ -65,23 +76,12 @@
                 </div>
 
                 <div class="input-field">
-                    <label for="Email" class="input-label">
+                    <label for="paswoord" class="input-label">
                         <br>
-                        Email
-                        <br>
-                    </label>
-                    <input type="email" name="Email" id="Email" class="input" placeholder="Enter your Email-adress" required>
-
-                    <br>
-                </div>
-
-                <div class="input-field">
-                <label for="phonenumber" class="input-label">
-                        <br>
-                        Phone Number
+                        Password
                         <br>
                     </label>
-                    <input type="number" name="phonenumber" id="phonenumber" class="input" placeholder="Enter your phonenumber" required>
+                    <input type="password" name="paswoord" id="paswoord" class="input" placeholder="Enter your password" required>
 
                     <br>
                 </div>

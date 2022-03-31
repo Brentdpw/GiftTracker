@@ -1,8 +1,3 @@
-drop database GiftTracker;
-CREATE DATABASE GiftTracker;
-
-USE GiftTracker;
-
 create table prefrences(
 prefrences_id int not null unique auto_increment,
 preferences_Name int not null,
@@ -20,17 +15,17 @@ Calender_Date date
 );
 
 create table user(
-persoon_id int not null unique AUTO_INCREMENT,
-firstnaam varchar(100) not null,
-achternaam varchar(100) not null,
-leeftijd int not null,
-geslacht varchar (50) not null,
+person_id int not null unique auto_increment,
+firstname varchar(100) not null,
+lastname varchar(100) not null,
+age int not null,
+gender varchar (50) not null,
 paswoord varchar (50) not null,
 IsAdmin boolean,
 prefrencescheck int,
 giftcheck int,
 calendercheck int,
-primary key(persoon_id),
+primary key(person_id),
 foreign key(calendercheck) references calender(calender_id),
 foreign key(prefrencescheck) references prefrences(prefrences_id),
 foreign key(giftcheck) references gift(gift_id)

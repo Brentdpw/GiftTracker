@@ -36,4 +36,5 @@
             mysqli_query($this->connection, $sql);
         }
     }
-    $DataBaseKenny = new Database("localhost", "root", "root", "sortinghat", 3306);
+    #$DataBaseGiftTracker = new Database("localhost", "root", "root", "sortinghat", 3306);
+    $DataBaseGiftTracker = new Database("ID361990_GiftTracker.db.webhosting.be", "ID361990_GiftTracker", "gifttracker123", "ID361990_GiftTracker", 3306);
