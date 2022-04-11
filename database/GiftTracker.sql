@@ -15,21 +15,20 @@ Calender_Date date
 );
 
 create table user(
-person_id int not null unique auto_increment,
-firstname varchar(100) not null,
-lastname varchar(100) not null,
-age int not null,
-gender varchar (50) not null,
-paswoord varchar (50) not null,
+user_id int not null unique auto_increment,
+firstname varchar(255) not null,
+lastname varchar(255) not null,
+username varchar(255) not null,
+birthdate date not null,
+gender varchar (255) not null,
+email varchar (255) not null,
+password varchar (255) not null,
 IsAdmin boolean,
 prefrencescheck int,
 giftcheck int,
 calendercheck int,
-primary key(person_id),
+primary key(user_id),
 foreign key(calendercheck) references calender(calender_id),
 foreign key(prefrencescheck) references prefrences(prefrences_id),
 foreign key(giftcheck) references gift(gift_id)
 );
-
-
-
