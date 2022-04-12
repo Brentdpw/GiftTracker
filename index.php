@@ -35,6 +35,7 @@ if (isset($_POST['submit'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/css/login.css">
         <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/loginForms.css">
     </head>
     <body>
 
@@ -52,15 +53,17 @@ if (isset($_POST['submit'])) {
             </div>
 
             <div class="column rightColumn">
-                <h2>
-                    Welcome!
-                </h2>
-
-                <h3>
-                    Login
-                </h3>
+                
                 
                 <div class="container">
+                    <h2 class="title">
+                        Welcome!
+                    </h2>
+                    <br>
+                    <h3 class="undertitle">
+                        Login
+                    </h3>
+
                     <form action="" method="POST" class="login-email">
                         <div class="input-group">
                             <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>

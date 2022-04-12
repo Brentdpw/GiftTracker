@@ -1,0 +1,61 @@
+.container {
+    width: 400px;
+    height: auto;
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 40px 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.containerGender{
+    width: 95%;
+    height: 25px;
+    background: #FFF;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.title{
+    text-decoration: underline;
+    text-align: center;
+}
+
+.undertitle{
+    text-decoration: underline;
+    
+}
+
+.container .login-email .input-group input {
+    width: 95%;
+    height: 100%;
+    border: 3px solid #e7e7e7;
+    padding: 10px;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+}
+
+.container .login-email .input-group .btn {
+    display: block;
+    width: 95%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background: #1ebaa9;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}

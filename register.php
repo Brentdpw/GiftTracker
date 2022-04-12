@@ -66,6 +66,7 @@ if (isset($_POST['submit'])){
         <title>Sign up</title>
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/signup.css">
+        <link rel="stylesheet" href="./assets/css/loginForms.css">
     </head>
     <body>
         <div class="header">
@@ -74,11 +75,12 @@ if (isset($_POST['submit'])){
             </h1>
         </div>
 
-        <h3>
-            Create account
-        </h3>
-
         <div class="container">
+
+            <h3 class="undertitle">
+                Create account
+            </h3>
+
             <form action="" method="POST" class="login-email">
 
                 <div class="input-group">
@@ -99,24 +101,17 @@ if (isset($_POST['submit'])){
 
                 <br>
 
-                <div class="input-group">
-                    <label for="gender">
-                        Gender
-                    </label>
-                    <br>
-                    <label for="gender">
-                        Male     <input type="radio" name="gender" value="Male" required>
-                    </label>
-                    <br>
-                    <label for="gender">
-                        Female   <input type="radio" name="gender" value="Female" required>
-                    </label>
-                    <br>
-                    <label for="gender">
-                        Other    <input type="radio" name="gender" value="X" required>
-                    </label>
+                <div class="containerGender">
+                    <div class="input-group">
+                        <select name="gender" id="gender" required>
+                            <option disabled selected hidden>Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="x">x</option>
+                        </select>
+                    </div>
                 </div>
-
+                
                 <br>
 
                 <div class="input-group">
