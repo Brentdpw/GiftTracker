@@ -101,15 +101,13 @@ if (isset($_POST['submit'])){
 
                 <br>
 
-                <div class="containerGender">
-                    <div class="input-group">
-                        <select name="gender" id="gender" required>
-                            <option disabled selected hidden>Select gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="x">x</option>
-                        </select>
-                    </div>
+                <div class="input-group">
+                    <select name="gender" id="gender" class="gender" required>
+                        <option disabled selected> Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="x">x</option>
+                    </select>    
                 </div>
                 
                 <br>

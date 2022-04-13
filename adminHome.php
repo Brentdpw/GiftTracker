@@ -13,10 +13,11 @@ if (!isset($_SESSION['username'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome</title>
+        <title>Admin Home</title>
     </head>
     <body>
-        <?php echo "<h1>Welcome " . $_SESSION['username'] . "</h1>"; ?>
+        <?php echo "<h1>Welcome Admin: " . $_SESSION['username'] . "</h1>"; ?>
+        <h2>You are on the admin page</h2>
         <a href="logout.php">Logout</a>
     </body>
 </html>

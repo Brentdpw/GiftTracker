@@ -6,10 +6,6 @@ session_start();
 
 error_reporting(0);
 
-if (isset($_SESSION['username'])) {
-    header("Location: welcome.php");
-}
-
 if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$password = md5($_POST['password']);
@@ -20,7 +16,13 @@ if (isset($_POST['submit'])) {
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION['username'] = $row['username'];
-		header("Location: welcome.php");
+		
+        if($row["UserAdmin"]=="user"){
+            header("Location: userHome.php");
+        }
+        elseif($row["UserAdmin"]=="admin"){
+            header("Location: adminHome.php");
+        }
 
 	} else {
 		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
