@@ -1,0 +1,43 @@
+.adminTable{
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    font-size: 1.2rem;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.adminTable thead tr{
+    background-color: #1ebaa9;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.adminTable th,
+.adminTable td{
+    padding: 12px 15px;
+}
+
+.adminTable tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.adminTable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.adminTable tbody tr:last-of-type{
+    border-bottom: 2px solid #1ebaa9;
+}
+
+.adminTable td.knop{
+    background-color: #1ebaa9;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+}
