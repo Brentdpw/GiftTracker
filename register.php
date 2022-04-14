@@ -141,6 +141,7 @@ if (isset($_POST['submit'])){
                 </div>
 
                 <p class="login-register-text">Allready have an account? <a href="index.php">Login here</a></p>
+                
             </form>
         </div>
     </body>

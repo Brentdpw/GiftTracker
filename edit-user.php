@@ -1,6 +1,12 @@
 <?php
 include 'config.php';
 
+// if(isset($_POST['edit-user']))
+// {
+//     $id = $_POST['edit_id'];
+//     echo $id;
+// }
+
 ?>
 
 <!DOCTYPE html>

@@ -39,7 +39,7 @@ if (!isset($_SESSION['username']))
                         <th>Gender</th>
                         <th>Email</th>
                         <th>Usertype</th>
-                        <th colspan="2">Operation</th>
+                        <th colspan="2">Function</th>
                     </tr>
                 </thead>
 
@@ -83,7 +83,13 @@ if (!isset($_SESSION['username']))
         
         <br>
 
-        <a href="logout.php">Logout</a>
-
+        <div class="container">
+            <form action="logout.php" class="login-email">
+                <div class="input-group">
+                    <button name="button" class="btn">Logout</button>
+                </div>  
+            </form>
+        </div>
+        
     </body>
 </html>
