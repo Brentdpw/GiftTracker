@@ -1,12 +1,5 @@
 <?php
 include 'config.php';
-
-// if(isset($_POST['edit-user']))
-// {
-//     $id = $_POST['edit_id'];
-//     echo $id;
-// }
-
 ?>
 
 <!DOCTYPE html>
@@ -32,45 +25,58 @@ include 'config.php';
                 Edit user account
             </h3>
 
-            <form action="" method="POST" class="login-email">
+            <?php
 
-                <div class="input-group">
-                    <input type="text" placeholder="Firstname" name="firstname" value="<?php echo $firstname; ?>" required>
-                </div>
+                if(isset($_POST['edit-user']))
+                {
+                    $id = $_POST['edit_id'];
+        
+                    $query = "SELECT * FROM user WHERE user_id=$id";
+                    $query_run = mysqli_query($conn, $query);
 
-                <br>
+                    foreach($query_run as $row)
+                    {
+                        ?>
 
-                <div class="input-group">
-                    <input type="text" placeholder="Lastname" name="lastname" value="<?php echo $lastname; ?>" required>
-                </div>
+                        <form action="edit-userEditor.php" method="POST" class="login-email">
 
-                <br>
+                            <div class="input-group">
+                                <input type="text" name="edit-firstname" value="<?php echo $row['firstname'] ?>" class="form-control" required>
+                            </div>
 
-                <div class="input-group">
-                    <input type="text" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
-                </div>
+                            <br>
 
-                <br>
+                            <div class="input-group">
+                                <input type="text" name="edit-lastname" value="<?php echo $row['lastname'] ?>" class="form-control" required>
+                            </div>
 
-                <div class="input-group">
-                    <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
-                </div>
+                            <br>
 
-                <br>
+                            <div class="input-group">
+                                <input type="text" name="edit-username" value="<?php echo $row['username'] ?>" class="form-control" required>
+                            </div>
 
-                <div class="input-group">
-                    <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
-                </div>
+                            <br>
 
-                <br>
+                            <div class="input-group">
+                                <input type="email" name="edit-email" value="<?php echo $row['email'] ?>" class="form-control" required>
+                            </div>
 
-                <div class="input-group">
-                    <button name="submit" class="btn">Update</button>
-                </div> 
-                
-                <br>
+                            <br>
 
-            </form>
+                            <div class="input-group">
+                                <button type="submit" name="submit" class="btn">Update</button>
+                            </div> 
+
+                        </form>
+
+                        <?php
+                    }
+                }    
+
+            ?>
+
+            <br>
 
             <form action="adminHome.php" class="login-email">
                 <div class="input-group">
