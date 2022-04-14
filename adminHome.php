@@ -4,7 +4,8 @@ include 'config.php';
 
 session_start();
 
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username'])) 
+{
     header("Location: index.php");
 }
 
@@ -38,7 +39,7 @@ if (!isset($_SESSION['username'])) {
                         <th>Gender</th>
                         <th>Email</th>
                         <th>Usertype</th>
-                        <th>Operation</th>
+                        <th colspan="2">Operation</th>
                     </tr>
                 </thead>
 
@@ -49,7 +50,7 @@ if (!isset($_SESSION['username'])) {
 
                         if($result-> num_rows > 0){
                             while($row = $result-> fetch_assoc()){
-                                ?>
+                            ?>
                                 <tr>
                                     <td><?= $row["user_id"];    ?></td>
                                     <td><?= $row["firstname"];  ?></td>
@@ -60,12 +61,18 @@ if (!isset($_SESSION['username'])) {
                                     <td><?= $row["email"];      ?></td>
                                     <td><?= $row["UserAdmin"];  ?></td>
                                     <td> 
+                                        <form action="edit-user.php" method="POST">
+                                            <input type="hidden" name="edit_id" value="<?= $row["user_id"];?>">
+                                            <button type="submit" name="edit-user" class="btn btn-danger">Edit</button>
+                                        </form>
+                                    </td>
+                                    <td> 
                                         <form action="delete.php" method="POST">
                                             <button type="submit" name="user_delete" value="<?= $row["user_id"];?>" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
-                                <?php
+                            <?php
                             }
                         }
                     ?>
