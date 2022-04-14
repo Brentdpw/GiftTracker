@@ -45,10 +45,14 @@
 .btn-edit{
     color: white;
     background-color: green;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
 
 .btn-delete{
     color: white;
     background-color: red;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
