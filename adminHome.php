@@ -63,12 +63,12 @@ if (!isset($_SESSION['username']))
                                     <td> 
                                         <form action="edit-user.php" method="POST">
                                             <input type="hidden" name="edit_id" value="<?= $row["user_id"];?>">
-                                            <button type="submit" name="edit-user" class="btn btn-danger">Edit</button>
+                                            <button type="submit" name="edit-user" class="btn-edit">Edit</button>
                                         </form>
                                     </td>
                                     <td> 
                                         <form action="delete.php" method="POST">
-                                            <button type="submit" name="user_delete" value="<?= $row["user_id"];?>" class="btn btn-danger">Delete</button>
+                                            <button type="submit" name="user_delete" value="<?= $row["user_id"];?>" class="btn-delete">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
