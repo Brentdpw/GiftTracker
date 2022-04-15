@@ -1,8 +1,9 @@
 <?php
+    include 'config.php';
     require_once "config.php";
 
     $json = array();
-    $sqlQuery = "SELECT * FROM tbl_events ORDER BY id";
+    $sqlQuery = "SELECT * FROM calendar ORDER BY id";
 
     $result = mysqli_query($conn, $sqlQuery);
     $eventArray = array();
