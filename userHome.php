@@ -17,13 +17,27 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
+
+        <!--Calendar-->
+        <link rel="stylesheet" href="./calendar/fullcalendar-lib/fullcalendar.min.css" />
+        <link rel="stylesheet" href="./calendar/calender.css">
+        <script src="./calendar/fullcalendar-lib/lib/jquery.min.js"></script>
+        <script src="./calendar/fullcalendar-lib/lib/moment.min.js"></script>
+        <script src="./calendar/fullcalendar-lib/fullcalendar.min.js"></script>
+        <script src="./calendar/calender.js"></script>
+
         <title>User Home</title>
+
     </head>
     <body>
         <div class="header">
             <?php echo "<h1>Welcome User: " . $_SESSION['username'] . "</h1>"; ?>
         </div>
 
+        <div class="calendar">
+            <div class="response"></div>
+            <div id='calendar'></div>
+        </div>
         
 
         <div class="container">
