@@ -61,7 +61,7 @@ if (!isset($_SESSION['username']))
                                     <td><?= $row["email"];      ?></td>
                                     <td><?= $row["UserAdmin"];  ?></td>
                                     <td> 
-                                        <form action="edit-user.php" method="POST">
+                                        <form action="Admin-edit-user.php" method="POST">
                                             <input type="hidden" name="edit_id" value="<?= $row["user_id"];?>">
                                             <button type="submit" name="edit-user" class="btn-edit">Edit</button>
                                         </form>

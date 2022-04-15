@@ -24,7 +24,18 @@ if (!isset($_SESSION['username'])) {
             <?php echo "<h1>Welcome User: " . $_SESSION['username'] . "</h1>"; ?>
         </div>
 
+        
+
         <div class="container">
+            <form action="User-edit-user.php" class="login-email">
+                <div class="input-group">
+                    <input type="hidden" name="edit_id" value="<?= $_SESSION['username'];?>">
+                    <button type="submit" name="edit-user" class="btn">Edit my account</button>
+                </div>
+            </form>
+
+            <br>
+
             <form action="logout.php" class="login-email">
                 <div class="input-group">
                     <button name="button" class="btn">Logout</button>

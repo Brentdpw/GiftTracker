@@ -1,5 +1,12 @@
 <?php
 include 'config.php';
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -29,16 +36,16 @@ include 'config.php';
 
                 if(isset($_POST['edit-user']))
                 {
-                    $id = $_POST['edit_id'];
+                    $user_id = $_POST['edit_id'];
         
-                    $query = "SELECT * FROM user WHERE user_id=$id";
+                    $query = "SELECT * FROM user WHERE user_id=$user_id";
                     $query_run = mysqli_query($conn, $query);
 
                     foreach($query_run as $row)
                     {
                         ?>
 
-                        <form action="edit-userEditor.php" method="POST" class="login-email">
+                        <form action="Admin-edit-UserEditor.php" method="POST" class="login-email">
 
                             <div class="input-group">
                                 <input type="text" name="edit-firstname" value="<?php echo $row['firstname'] ?>" class="form-control" required>
@@ -77,8 +84,8 @@ include 'config.php';
             ?>
 
             <br>
-
-            <form action="adminHome.php" class="login-email">
+            
+            <form action="userHome.php" class="login-email">
                 <div class="input-group">
                     <button name="button" class="btn">Cancel</button>
                 </div>  
