@@ -17,6 +17,7 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
 
         <!--Calendar-->
         <link rel="stylesheet" href="./calendar/fullcalendar-lib/fullcalendar.min.css" />
@@ -30,9 +31,25 @@ if (!isset($_SESSION['username'])) {
 
     </head>
     <body>
-        <div class="header">
-            <?php echo "<h1>Welcome User: " . $_SESSION['username'] . "</h1>"; ?>
-        </div>
+        
+        <header>
+            <div class="header-container">
+                <a href="#">
+                    <img src="./assets/images/User_icon_2.svg.png" alt="icon" class="icon">
+                </a>
+                
+                <?php echo "<p class='icon'>" . $_SESSION['username'] . "</p>"; ?>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
 
         <div class="calendar">
             <div class="response"></div>

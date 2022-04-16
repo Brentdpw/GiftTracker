@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    font-weight: 400;
+
+}
+
+
+.header-container{
+    width: 85%;
+    margin: 0 auto;
+}
+
+header{
+    background-color: #1ebaa9;
+}
+
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.icon{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    float: left;
+    height: 70px;
+}
+
+nav{
+    float: right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 35px;
+}
+
+nav a{
+    color: aliceblue;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover{
+    color: black;
+}
