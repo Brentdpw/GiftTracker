@@ -38,6 +38,7 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" href="./assets/css/login.css">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
+        <link rel="stylesheet" href="./assets/css/preview.css">
     </head>
     <body>
 
@@ -50,8 +51,9 @@ if (isset($_POST['submit'])) {
         <div class="row">
 
             <div class="column leftColumn">
-                <h2>Column 1</h2>
-                <p>Some text..</p>
+                <div class="container-preview">
+                    <img src="./assets/images/kalender.png" alt="kalender" class="kalender">
+                </div>
             </div>
 
             <div class="column rightColumn">

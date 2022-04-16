@@ -19,12 +19,31 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+        
         <title>Edit user account</title>
     </head>
     <body>
-        <div class="header">
-            <?php echo "<h1>Edit - Update</h1>"; ?>
-        </div>
+
+        <header>
+            <div class="header-container">
+                <a href="#">
+                    <img src="./assets/images/User_icon_2.svg.png" alt="icon" class="icon">
+                </a>
+                
+                <?php echo "<p class='icon'>" . $_SESSION['username'] . "</p>"; ?>
+                
+                <nav>
+                    <ul>
+
+                        <li><a href="userHome.php">Home</a></li>
+
+                        <li><a href="logout.php">Logout</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
         <div class="container">
 

@@ -1,7 +1,6 @@
 body{
     margin: 0;
     font-weight: 400;
-
 }
 
 
@@ -25,10 +24,13 @@ header::after{
     padding-bottom: 10px;
     float: left;
     height: 70px;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav{
     float: right;
+    font-weight: 400;
 }
 
 nav ul{
@@ -41,6 +43,8 @@ nav li{
     display: inline-block;
     margin-left: 70px;
     padding-top: 35px;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav a{

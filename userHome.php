@@ -12,6 +12,7 @@ if (!isset($_SESSION['username'])) {
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/login.css">
         <link rel="stylesheet" href="./assets/css/style.css">
@@ -42,9 +43,11 @@ if (!isset($_SESSION['username'])) {
                 
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Logout</a></li>
+
+                        <li><a href="User-edit-user.php">Settings</a></li>
+
+                        <li><a href="logout.php">Logout</a></li>
+
                     </ul>
                 </nav>
             </div>
@@ -56,23 +59,6 @@ if (!isset($_SESSION['username'])) {
             <div id='calendar'></div>
         </div>
         
-
-        <div class="container">
-            <form action="User-edit-user.php" class="login-email">
-                <div class="input-group">
-                    <input type="hidden" name="edit_id" value="<?= $_SESSION['username'];?>">
-                    <button type="submit" name="edit-user" class="btn">Edit my account</button>
-                </div>
-            </form>
-
-            <br>
-
-            <form action="logout.php" class="login-email">
-                <div class="input-group">
-                    <button name="button" class="btn">Logout</button>
-                </div>  
-            </form>
-        </div>
 
     </body>
 </html>

@@ -15,17 +15,34 @@ if (!isset($_SESSION['username']))
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/login.css">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+
         <title>Admin Home</title>
     </head>
     <body>
-        <div class="header">
-            <?php echo "<h1>Welcome Admin: " . $_SESSION['username'] . "</h1>"; ?>
-        </div>
+        <header>
+            <div class="header-container">
+                <a href="#">
+                    <img src="./assets/images/User_icon_2.svg.png" alt="icon" class="icon">
+                </a>
+                
+                <?php echo "<p class='icon'>" . $_SESSION['username'] . "</p>"; ?>
+                
+                <nav>
+                    <ul>
+
+                        <li><a href="logout.php">Logout</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
         <div>
             <table class="adminTable">
@@ -79,16 +96,6 @@ if (!isset($_SESSION['username']))
                 </tbody>
 
             </table>
-        </div>
-        
-        <br>
-
-        <div class="container">
-            <form action="logout.php" class="login-email">
-                <div class="input-group">
-                    <button name="button" class="btn">Logout</button>
-                </div>  
-            </form>
         </div>
         
     </body>
