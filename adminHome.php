@@ -28,7 +28,7 @@ if (!isset($_SESSION['username']))
     <body>
         <header>
             <div class="header-container">
-                <a href="#">
+                <a href="adminHome.php">
                     <img src="./assets/images/User_icon_2.svg.png" alt="icon" class="icon">
                 </a>
                 

@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
         
         <header>
             <div class="header-container">
-                <a href="#">
+                <a href="userHome.php">
                     <img src="./assets/images/User_icon_2.svg.png" alt="icon" class="icon">
                 </a>
                 
