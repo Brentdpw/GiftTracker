@@ -51,57 +51,55 @@ if (!isset($_SESSION['username'])) {
                 Edit user account
             </h3>
 
-            <?php
 
-                if(isset($_POST['edit-user']))
-                {
-                    $user_id = $_POST['edit_id'];
-        
-                    $query = "SELECT * FROM user WHERE user_id=$user_id";
-                    $query_run = mysqli_query($conn, $query);
+            <form action="User-edit-UserEditor.php" method="POST" enctype="multipart/form-data" class="login-email">
+                <?php
+                    $currentUser = $_SESSION['username'];
+                    $sql = "SELECT firstname, lastname, username, email FROM user WHERE username = '$currentUser'";
 
-                    foreach($query_run as $row)
-                    {
-                        ?>
+                    $gotResult = mysqli_query($conn, $sql);
 
-                        <form action="Admin-edit-UserEditor.php" method="POST" class="login-email">
+                    if($gotResult){
+                        if(mysqli_num_rows($gotResult)>0){
+                            while($row = mysqli_fetch_array($gotResult)){
+                                ?>
+                                
+                                <div class="input-group">
+                                    <input type="text" name="edit-firstname" value="<?php echo $row['firstname'] ?>" class="form-control" required>
+                                </div>
 
-                            <div class="input-group">
-                                <input type="text" name="edit-firstname" value="<?php echo $row['firstname'] ?>" class="form-control" required>
-                            </div>
+                                <br>
 
-                            <br>
+                                <div class="input-group">
+                                    <input type="text" name="edit-lastname" value="<?php echo $row['lastname'] ?>" class="form-control" required>
+                                </div>
 
-                            <div class="input-group">
-                                <input type="text" name="edit-lastname" value="<?php echo $row['lastname'] ?>" class="form-control" required>
-                            </div>
+                                <br>
 
-                            <br>
+                                <div class="input-group">
+                                    <input type="text" name="edit-username" value="<?php echo $row['username'] ?>" class="form-control" required>
+                                </div>
 
-                            <div class="input-group">
-                                <input type="text" name="edit-username" value="<?php echo $row['username'] ?>" class="form-control" required>
-                            </div>
+                                <br>
 
-                            <br>
+                                <div class="input-group">
+                                    <input type="email" name="edit-email" value="<?php echo $row['email'] ?>" class="form-control" required>
+                                </div>
 
-                            <div class="input-group">
-                                <input type="email" name="edit-email" value="<?php echo $row['email'] ?>" class="form-control" required>
-                            </div>
+                                <br>
+                                
+                                <div class="input-group">
+                                    <button type="submit" name="submit" class="btn">Update</button>
+                                </div>
 
-                            <br>
-
-                            <div class="input-group">
-                                <button type="submit" name="submit" class="btn">Update</button>
-                            </div> 
-
-                        </form>
-
-                        <?php
+                                <?php
+                            }
+                        }
                     }
-                }    
-
-            ?>
-
+                ?>
+                
+            </form>
+            
             <br>
             
             <form action="userHome.php" class="login-email">

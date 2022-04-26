@@ -1,0 +1,29 @@
+<?php
+include('config.php');
+
+session_start();
+
+if(isset($_POST['submit'])){
+
+        $newFirstname = $_POST['edit-firstname'];
+        $newLastname = $_POST['edit-lastname'];
+        $newUsername = $_POST['edit-username'];
+        $newEmail = $_POST['edit-email'];
+
+        if(!empty($newFirstname) && !empty($newLastname) && !empty($newUsername) && !empty($newEmail)){
+            $loggedInUser = $_SESSION['username'];
+            $sql = "UPDATE user SET firstname = '$newFirstname', lastname = '$newLastname', username = '$newUsername', email = '$newEmail' 
+                    WHERE username = '$loggedInUser'";
+
+            $results = mysqli_query($conn, $sql);
+
+            header('Location: User-edit-user.php');
+            exit;
+
+        }else{
+            header('Location: User-edit-user.php');
+            exit;
+        }
+}
+
+?>
