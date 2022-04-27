@@ -6,8 +6,8 @@ body {
 }
 
 #calendar {
-    width: 900px;
-    margin: 0 auto;
+    width: 80vw;
+    margin: auto auto;
 }
 
 .response {

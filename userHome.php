@@ -22,11 +22,11 @@ if (!isset($_SESSION['username'])) {
 
         <!--Calendar-->
         <link rel="stylesheet" href="./calendar/fullcalendar-lib/fullcalendar.min.css" />
-        <link rel="stylesheet" href="./calendar/calender.css">
+        <link rel="stylesheet" href="./calendar/calendar.css">
         <script src="./calendar/fullcalendar-lib/lib/jquery.min.js"></script>
         <script src="./calendar/fullcalendar-lib/lib/moment.min.js"></script>
         <script src="./calendar/fullcalendar-lib/fullcalendar.min.js"></script>
-        <script src="./calendar/calender.js"></script>
+        <script src="./calendar/calendar.js"></script>
 
         <title>User Home</title>
 
