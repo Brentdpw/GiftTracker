@@ -22,7 +22,7 @@ if (isset($_POST['submit'])){
 
     if ($password == $cpassword) {
 
-        $sql = "SELECT * FROM user WHERE email='$email'";
+        $sql = "SELECT * FROM user WHERE email='$email' or username='$username'";
         $result = mysqli_query($conn, $sql);
 
             if(!$result->num_rows > 0){
@@ -47,7 +47,7 @@ if (isset($_POST['submit'])){
             }
 
         } else {
-            echo "<script> alert('Woops! Email already exists') </script>";
+            echo "<script> alert('Woops! Email or Username already exists') </script>";
         }
 
     } else {
@@ -80,6 +80,10 @@ if (isset($_POST['submit'])){
             <h3 class="undertitle">
                 Create account
             </h3>
+
+            <?php
+            
+            ?>
 
             <form action="" method="POST" class="login-email">
 

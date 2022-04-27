@@ -55,7 +55,7 @@ if (!isset($_SESSION['username'])) {
             <form action="User-edit-UserEditor.php" method="POST" enctype="multipart/form-data" class="login-email">
                 <?php
                     $currentUser = $_SESSION['username'];
-                    $sql = "SELECT firstname, lastname, username, email FROM user WHERE username = '$currentUser'";
+                    $sql = "SELECT * FROM user WHERE username = '$currentUser'";
 
                     $gotResult = mysqli_query($conn, $sql);
 
@@ -77,7 +77,7 @@ if (!isset($_SESSION['username'])) {
                                 <br>
 
                                 <div class="input-group">
-                                    <input type="text" name="edit-username" value="<?php echo $row['username'] ?>" class="form-control" required>
+                                    <input type="date" name="edit-birthdate" value="<?php echo $row['birthdate'] ?>" class="form-control" required>
                                 </div>
 
                                 <br>

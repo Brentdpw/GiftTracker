@@ -79,7 +79,7 @@ if (!isset($_SESSION['username']))
                             <br>
 
                             <div class="input-group">
-                                <input type="text" name="edit-username" value="<?php echo $row['username'] ?>" class="form-control" required>
+                                <input type="text" name="edit-birthdate" value="<?php echo $row['birthdate'] ?>" class="form-control" required>
                             </div>
 
                             <br>
