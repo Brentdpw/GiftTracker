@@ -18,14 +18,14 @@ if (isset($_POST['submit'])) {
 		$_SESSION['username'] = $row['username'];
 		
         if($row["UserAdmin"]=="user"){
-            header("Location: userHome.php");
+            header("Location: userHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
         }
         elseif($row["UserAdmin"]=="admin"){
-            header("Location: adminHome.php");
+            header("Location: adminHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
         }
 
 	} else {
-		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+        header("Location: index.php?message=<div class='alert alert-danger'>Email of Password is wrong</div>");
 	}
 }
 
@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/preview.css">
+        <link rel="stylesheet" href="./assets/css/alerts.css">
     </head>
     <body>
 
@@ -67,6 +68,15 @@ if (isset($_POST['submit'])) {
                     <h3 class="undertitle">
                         Login
                     </h3>
+
+                    <?php
+                    if(isset($_GET['message'])){
+                        $message = $_GET['message'];
+                        echo $message;
+                    }
+                    ?>
+
+                    <br>
 
                     <form action="" method="POST" class="login-email">
                         <div class="input-group">

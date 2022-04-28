@@ -32,7 +32,7 @@ if (isset($_POST['submit'])){
                 $result = mysqli_query($conn, $sql);
 
                 if($result){
-                echo "<script> alert('Wow! User registration completed!') </script>";
+                header("Location: register.php?message=<div class='alert alert-succes'>User registration completed!</div>");
                 $firstname = "";
                 $lastname = "";
                 $username = "";
@@ -43,15 +43,15 @@ if (isset($_POST['submit'])){
                 $_POST['cpassword'] = "";
 
             } else {
-                echo "<script> alert('Woops! Something went wrong.') </script>";
+                header("Location: register.php?message=<div class='alert alert-danger'>Something went wrong!</div>");
             }
 
         } else {
-            echo "<script> alert('Woops! Email or Username already exists') </script>";
+            header("Location: register.php?message=<div class='alert alert-danger'>Email or Username already exsits</div>");
         }
 
     } else {
-        echo "<script> alert('Password Not Matched!') </script>";
+        header("Location: register.php?message=<div class='alert alert-danger'>Password Not Matched!</div>");
     }
 }
 
@@ -67,6 +67,7 @@ if (isset($_POST['submit'])){
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/signup.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
+        <link rel="stylesheet" href="./assets/css/alerts.css">
     </head>
     <body>
         <div class="header">
@@ -82,8 +83,13 @@ if (isset($_POST['submit'])){
             </h3>
 
             <?php
-            
+                if(isset($_GET['message'])){
+                    $message = $_GET['message'];
+                    echo $message;
+                }
             ?>
+
+            <br>
 
             <form action="" method="POST" class="login-email">
 

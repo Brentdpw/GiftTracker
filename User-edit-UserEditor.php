@@ -16,11 +16,11 @@ if(isset($_POST['submit'])){
 
             $results = mysqli_query($conn, $sql);
 
-            header('Location: User-edit-user.php');
+            header("Location: User-edit-user.php?message=<div class='alert alert-succes'>Updated!</div>");
             exit;
 
         }else{
-            header('Location: User-edit-user.php');
+            header("Location: User-edit-user.php?message=<div class='alert alert-succes'>Not Updated!</div>");
             exit;
         }
 }
