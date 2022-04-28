@@ -57,7 +57,6 @@
 
             <div class="column rightColumn">
                 
-                
                 <div class="container">
                     <h2 class="title">
                         Welcome!
@@ -90,11 +89,9 @@
                         </div>
                         <p class="login-register-text">Don't have an account? <a href="register.php">Register here</a></p>  
                     </form>
-                </div>
-                    
+
+                </div>  
             </div>
-
         </div>
-
     </body>
 </html>
