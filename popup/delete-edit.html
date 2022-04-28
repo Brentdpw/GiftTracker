@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./popup.css">
-    
 </head>
 <body>
+
     <button onClick="openPopup();">click here</button>
 
-    <div id="test" class="popup">
+    <div id="test" class="popup-edit">
         <div class="cancel" onclick="closePopup();"><img src="./kruis.png" alt="" class="cancel"></div>
 
         <form action="">
@@ -26,9 +26,13 @@
             <input type="date" id="end_date" name="end_date">
 
             <input type="submit" value="Save" class="save-user">
+            <input type="submit" value="Delete" class="delete-user">
+
         </form>
     </div>
-    
+
+
+
 
     <script src="./popup.js"></script>
 </body>
