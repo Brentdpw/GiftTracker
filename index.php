@@ -1,34 +1,32 @@
 <?php 
+    include 'config.php';
 
-include 'config.php';
+    session_start();
 
-session_start();
+    error_reporting(0);
 
-error_reporting(0);
+    if (isset($_POST['submit'])) {
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
 
-if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$password = md5($_POST['password']);
+        $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+        $result = mysqli_query($conn, $sql);
 
-	$sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
-	$result = mysqli_query($conn, $sql);
+        if ($result->num_rows > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['username'] = $row['username'];
+            
+            if($row["UserAdmin"]=="user"){
+                header("Location: userHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
+            }
+            elseif($row["UserAdmin"]=="admin"){
+                header("Location: adminHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
+            }
 
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		$_SESSION['username'] = $row['username'];
-		
-        if($row["UserAdmin"]=="user"){
-            header("Location: userHome.php");
+        } else {
+            header("Location: index.php?message=<div class='alert alert-danger'>Email of Password is wrong</div>");
         }
-        elseif($row["UserAdmin"]=="admin"){
-            header("Location: adminHome.php");
-        }
-
-	} else {
-		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
-	}
-}
-
+    }
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +37,7 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/preview.css">
+        <link rel="stylesheet" href="./assets/css/alerts.css">
     </head>
     <body>
 
@@ -58,7 +57,6 @@ if (isset($_POST['submit'])) {
 
             <div class="column rightColumn">
                 
-                
                 <div class="container">
                     <h2 class="title">
                         Welcome!
@@ -67,6 +65,15 @@ if (isset($_POST['submit'])) {
                     <h3 class="undertitle">
                         Login
                     </h3>
+
+                    <?php
+                    if(isset($_GET['message'])){
+                        $message = $_GET['message'];
+                        echo $message;
+                    }
+                    ?>
+
+                    <br>
 
                     <form action="" method="POST" class="login-email">
                         <div class="input-group">
@@ -82,11 +89,9 @@ if (isset($_POST['submit'])) {
                         </div>
                         <p class="login-register-text">Don't have an account? <a href="register.php">Register here</a></p>  
                     </form>
-                </div>
-                    
+
+                </div>  
             </div>
-
         </div>
-
     </body>
 </html>

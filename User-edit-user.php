@@ -1,12 +1,11 @@
 <?php
-include 'config.php';
+    include 'config.php';
 
-session_start();
+    session_start();
 
-if (!isset($_SESSION['username'])) {
-    header("Location: index.php");
-}
-
+    if (!isset($_SESSION['username'])) {
+        header("Location: index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +19,7 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
         <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/alerts.css">
         
         <title>Edit user account</title>
     </head>
@@ -51,6 +51,14 @@ if (!isset($_SESSION['username'])) {
                 Edit user account
             </h3>
 
+            <?php
+                if(isset($_GET['message'])){
+                    $message = $_GET['message'];
+                    echo $message;
+                }
+            ?>
+
+            <br>
 
             <form action="User-edit-UserEditor.php" method="POST" enctype="multipart/form-data" class="login-email">
                 <?php

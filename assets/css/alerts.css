@@ -1,0 +1,22 @@
+.alert{
+    text-align: center;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.alert-danger{
+    background-color: red;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.alert-succes{
+    background-color: lightgreen;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
