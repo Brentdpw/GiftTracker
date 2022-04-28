@@ -1,34 +1,32 @@
 <?php 
+    include 'config.php';
 
-include 'config.php';
+    session_start();
 
-session_start();
+    error_reporting(0);
 
-error_reporting(0);
+    if (isset($_POST['submit'])) {
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
 
-if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$password = md5($_POST['password']);
+        $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+        $result = mysqli_query($conn, $sql);
 
-	$sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
-	$result = mysqli_query($conn, $sql);
+        if ($result->num_rows > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['username'] = $row['username'];
+            
+            if($row["UserAdmin"]=="user"){
+                header("Location: userHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
+            }
+            elseif($row["UserAdmin"]=="admin"){
+                header("Location: adminHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
+            }
 
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		$_SESSION['username'] = $row['username'];
-		
-        if($row["UserAdmin"]=="user"){
-            header("Location: userHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
+        } else {
+            header("Location: index.php?message=<div class='alert alert-danger'>Email of Password is wrong</div>");
         }
-        elseif($row["UserAdmin"]=="admin"){
-            header("Location: adminHome.php?message=<div class='alert alert-succes'>Login Succes!</div>");
-        }
-
-	} else {
-        header("Location: index.php?message=<div class='alert alert-danger'>Email of Password is wrong</div>");
-	}
-}
-
+    }
 ?>
 
 <!DOCTYPE html>

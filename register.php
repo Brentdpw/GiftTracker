@@ -1,60 +1,58 @@
 <?php
+    include 'config.php';
 
-include 'config.php';
+    error_reporting(0);
 
-error_reporting(0);
+    session_start();
 
-session_start();
+    if (isset($_SESSION['username'])){
+        header("Location: index.php");
+    }
 
-if (isset($_SESSION['username'])){
-    header("Location: index.php");
-}
+    if (isset($_POST['submit'])){
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['username'];
+        $birthdate = $_POST['birthdate'];
+        $gender = $_POST['gender'];
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
+        $cpassword = md5($_POST['cpassword']);
 
-if (isset($_POST['submit'])){
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $username = $_POST['username'];
-    $birthdate = $_POST['birthdate'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
-    $cpassword = md5($_POST['cpassword']);
+        if ($password == $cpassword) {
 
-    if ($password == $cpassword) {
+            $sql = "SELECT * FROM user WHERE email='$email' or username='$username'";
+            $result = mysqli_query($conn, $sql);
 
-        $sql = "SELECT * FROM user WHERE email='$email' or username='$username'";
-        $result = mysqli_query($conn, $sql);
+                if(!$result->num_rows > 0){
 
-            if(!$result->num_rows > 0){
+                    $sql = "INSERT INTO user (firstname, lastname, username, birthdate, gender, email, password)
+                        VALUES ('$firstname', '$lastname', '$username', '$birthdate', '$gender', '$email', '$password')";
+                    $result = mysqli_query($conn, $sql);
 
-                $sql = "INSERT INTO user (firstname, lastname, username, birthdate, gender, email, password)
-                    VALUES ('$firstname', '$lastname', '$username', '$birthdate', '$gender', '$email', '$password')";
-                $result = mysqli_query($conn, $sql);
+                    if($result){
+                    header("Location: register.php?message=<div class='alert alert-succes'>User registration completed!</div>");
+                    $firstname = "";
+                    $lastname = "";
+                    $username = "";
+                    $birthdate = "";
+                    $gender = "";
+                    $email = "";
+                    $_POST['password'] = "";
+                    $_POST['cpassword'] = "";
 
-                if($result){
-                header("Location: register.php?message=<div class='alert alert-succes'>User registration completed!</div>");
-                $firstname = "";
-                $lastname = "";
-                $username = "";
-                $birthdate = "";
-                $gender = "";
-                $email = "";
-                $_POST['password'] = "";
-                $_POST['cpassword'] = "";
+                } else {
+                    header("Location: register.php?message=<div class='alert alert-danger'>Something went wrong!</div>");
+                }
 
             } else {
-                header("Location: register.php?message=<div class='alert alert-danger'>Something went wrong!</div>");
+                header("Location: register.php?message=<div class='alert alert-danger'>Email or Username already exsits</div>");
             }
 
         } else {
-            header("Location: register.php?message=<div class='alert alert-danger'>Email or Username already exsits</div>");
+            header("Location: register.php?message=<div class='alert alert-danger'>Password Not Matched!</div>");
         }
-
-    } else {
-        header("Location: register.php?message=<div class='alert alert-danger'>Password Not Matched!</div>");
     }
-}
-
 ?>
 
 <!DOCTYPE html>

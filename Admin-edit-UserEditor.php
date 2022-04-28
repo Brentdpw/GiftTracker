@@ -1,7 +1,7 @@
 <?php
-include('config.php');
+    include('config.php');
 
-session_start();
+    session_start();
 
     if(isset($_POST['submit']))
     {
@@ -22,5 +22,4 @@ session_start();
             header('Location: adminHome.php'); 
         }
     }
-
 ?>

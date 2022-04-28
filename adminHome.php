@@ -1,14 +1,12 @@
 <?php 
+    include 'config.php';
 
-include 'config.php';
+    session_start();
 
-session_start();
-
-if (!isset($_SESSION['username'])) 
-{
-    header("Location: index.php");
-}
-
+    if (!isset($_SESSION['username'])) 
+    {
+        header("Location: index.php");
+    }
 ?>
 
 <!DOCTYPE html>
