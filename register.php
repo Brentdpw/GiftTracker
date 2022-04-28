@@ -31,7 +31,7 @@
                     $result = mysqli_query($conn, $sql);
 
                     if($result){
-                    header("Location: register.php?message=<div class='alert alert-succes'>User registration completed!</div>");
+                    header("Location: created.php?message=<div class='alert alert-succes'>User registration completed!</div>");
                     $firstname = "";
                     $lastname = "";
                     $username = "";
