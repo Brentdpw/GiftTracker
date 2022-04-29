@@ -1,5 +1,4 @@
 <?php
-    include 'config.php';
     require_once "config.php";
 
     $title  = isset($_POST['title']) ? $_POST['title'] : "";

@@ -1,4 +1,5 @@
 <?php 
+    include 'config.php';
     session_start();
 
     if (!isset($_SESSION['username'])) {
@@ -57,6 +58,5 @@
             <div id='calendar'></div>
         </div>
         
-
     </body>
 </html>
