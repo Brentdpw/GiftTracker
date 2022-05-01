@@ -1,18 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
-  
+# search word
+search = input("What are you searching for? ")
 # providing url
-url = 'https://www.bol.com//be/nl/s/?searchtext=badminton'
+url = 'https://www.bol.com//be/nl/s/?searchtext=' + search
   
 # creating request object
 req = requests.get(url)
   
 # creating soup object
 data = BeautifulSoup(req.text, 'html.parser')
-# finding all li tags in ul and printing the text within it
-soup = data.find('ul', {'class': 'list-view product-list js_multiple_basket_buttons_page'})
+# finding all li tags in ul and printing the text within it 
 # for li in soup:
     # print(li.text, end=" ")
+soup = data.find('ul', {'class': 'list-view product-list js_multiple_basket_buttons_page'})
 
 productCreator = soup.find_all('a', {'data-test' :'party-link'})
 # print("Product creator: " + productCreator.get_text())
