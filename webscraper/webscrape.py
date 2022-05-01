@@ -11,7 +11,6 @@ soup = BeautifulSoup(r.text, 'html.parser')
 list = soup.find('ul', {'class': 'list-view product-list js_multiple_basket_buttons_page'})
 
 # for item in list:
-#     print(item.get_text())
 
 productCreator = soup.find('a', {'data-test' :'party-link'})
 print("Product creator: " + productCreator.get_text())
