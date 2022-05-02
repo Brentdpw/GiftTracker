@@ -10,7 +10,7 @@
         $newBirthdate = $_POST['edit-birthdate'];
         $newEmail = $_POST['edit-email'];
         
-        $query = "UPDATE user SET firstname='$firstname', lastname='$lastname', username='$username', email='$email' WHERE user_id='$user_id' ";
+        $query = "UPDATE user SET firstname='$newFirstname', lastname='$newLastname', birthdate='$newBirthdate', email='$newEmail' WHERE user_id='$user_id' ";
         $query_run = mysqli_query($conn, $query);
 
         if($query_run)
