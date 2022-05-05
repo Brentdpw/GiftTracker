@@ -13,22 +13,24 @@
 
     <div id="test" class="popup">
         <div class="cancel" onclick="closePopup();"><img src="./kruis.png" alt="" class="cancel"></div>
-
-        <form action="">
+        <form id="myForm"> 
             <p class="center-title">Create activity</p>
 
             <label for="TitleAct">Title:</label><br>
             <input type="text" id="TitleAct" name="TitleAct"><br>
-            <label for="Descr">Description:</label><br>
-            <input type="text" id="Descr" name="Descr">
 
             <label for="start_date">Start date:</label><br>
             <input type="date" id="start_date" name="start_date"><br>
             <label for="end_date">End date:</label><br>
             <input type="date" id="end_date" name="end_date">
 
-            <input type="submit" value="Create" class="save-user">
+            <input type="button" value="Create" id="button">
         </form>
+    </div>
+
+
+    <div id="tekstvak">
+
     </div>
     
 
