@@ -34,7 +34,7 @@ for items in productPrice[:5]:
     price = "€"+ items.get('content').replace('.', ',')
     output.append(price)
 
-productDelivery = soup.find_all('div', {'class': 'product-delivery-highlight'})
+productDelivery = soup.find_all('div', {'class': 'product-delivery'})
 # print("Product delivery: " + productDelivery.get_text())
 for items in productDelivery[:5]:
     delivery = items.get_text()
@@ -56,13 +56,19 @@ for items in productPhoto[:9]:
     image = str(items.get('src'))
     if image != 'None':        
         output.append(image)
-print(output[0]+"\n"+output[5]+"\n"+output[10]+"\n"+output[15]+"\n"+output[20]+"\n"+output[25])
-print("\n")
-print(output[1]+"\n"+output[6]+"\n"+output[11]+"\n"+output[16]+"\n"+output[21]+"\n"+output[26])
-print("\n")
-print(output[2]+"\n"+output[7]+"\n"+output[12]+"\n"+output[17]+"\n"+output[22]+"\n"+output[27])
-print("\n")
-print(output[3]+"\n"+output[8]+"\n"+output[13]+"\n"+output[18]+"\n"+output[23]+"\n"+output[28])
-print("\n")
-print(output[4]+"\n"+output[9]+"\n"+output[14]+"\n"+output[19]+"\n"+output[24]+"\n"+output[29])
-print("\n")
+        
+count1 = 0
+count2 = 5
+count3 = 10
+count4 = 15
+count5 = 20
+count6 = 25
+for n in range(5):
+    print(output[count1]+"\n"+output[count2]+"\n"+output[count3]+"\n"+output[count4]+"\n"+output[count5]+"\n"+output[count6])
+    print("\n")
+    count1 += 1
+    count2 += 1
+    count3 += 1
+    count4 += 1
+    count5 += 1
+    count6 += 1
