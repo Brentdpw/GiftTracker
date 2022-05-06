@@ -54,6 +54,7 @@ productPhoto = soup.find_all('img')
 # print(productPhoto.get('src'))
 for items in productPhoto[:9]:
     image = str(items.get('src'))
+    #Gaat problemen vormen als er een afbeelding nie staa (lijn word niet gevuld dus count gaat 1 minder zijn)
     if image != 'None':        
         output.append(image)
         
@@ -72,3 +73,10 @@ for n in range(5):
     count4 += 1
     count5 += 1
     count6 += 1
+
+
+
+# for n in range(5):
+#     print(output[n]+"\n"+output[n+5]+"\n"+output[n+10]+"\n"+output[n+15]+"\n"+output[n+20]+"\n"+output[n+25])
+#     print("\n")
+#     n += 1
