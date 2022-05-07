@@ -50,9 +50,15 @@ for items in productButton[:5]:
 # orderUrl = 'https://www.bol.com/' + productButton.get('href')
 # print("Order url: " + orderUrl)
 
-productPhoto = soup.find_all('img')
-# print(productPhoto.get('src'))
-for items in productPhoto[:9]:
-    image = str(items.get('src'))
-    if image != 'None':
-        print(image)
+# productPhoto = soup.find_all('img')
+# # print(productPhoto.get('src'))
+# for items in productPhoto[:9]:
+#     image = str(items.get('src'))
+#     if image != 'None':
+#         print(image)
+
+productPhoto = soup.find_all('div', {"class" : "h-o-hidden"})
+for photo in productPhoto[:5]:
+    img = photo.find('img')#.attrs['src']
+    image = img.get('src') or img.get('data-src')
+    print(image)
