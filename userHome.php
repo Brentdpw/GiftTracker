@@ -18,11 +18,11 @@
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
         <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/popup.css">
 
         <!--Calendar-->
-        <link rel="stylesheet" href="./calendar/fullcalendar-lib/fullcalendar.min.css" />
         <link rel="stylesheet" href="./fullcalendar/calendar-style.css">
-        <link rel="stylesheet" href="fullcalendar/fullcalendar.min.css" />
+        <link rel="stylesheet" href="./fullcalendar/fullcalendar.min.css" />
         
         <title>User Home</title>      
     </head>
@@ -52,6 +52,24 @@
         <div class="calendar">
             <div class="response"></div>
             <div id='calendar'></div>
+
+            <div id="create-pupup" class="popup">
+                <div class="cancel" onclick="closePopup();"><img src="./assets/images/kruis.png" alt="" class="cancel"></div>
+                <form id="create-form"> 
+                    <p class="center-title">Create activity</p>
+
+                    <label for="titleAct">Title:</label><br>
+                    <input type="text" id="titleAct" name="TitleAct"><br>
+
+                    <label for="start_date">Start date:</label><br>
+                    <input type="date" id="start_date" name="start_date"><br>
+                    <label for="end_date">End date:</label><br>
+                    <input type="date" id="end_date" name="end_date">
+
+                    <input type="button" value="Create" id="popup-button">
+                </form>
+            </div>
+            
         </div>
         
         <script src="fullcalendar/lib/jquery.min.js"></script>

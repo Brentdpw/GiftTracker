@@ -1,9 +1,9 @@
 function openPopup() {
-    document.getElementById('test').style.display = 'block';
+    document.getElementById('create-pupup').style.display = 'block';
 }
 
 function closePopup() {
-    document.getElementById('test').style.display = 'none';
+    document.getElementById('create-pupup').style.display = 'none';
 }
 
 var ElementButton = document.querySelector("#popup-button");
@@ -15,5 +15,5 @@ ElementButton.addEventListener("click", function(){
     var title = Input.value;
     
     closePopup()
-    document.getElementById("myForm").reset();
+    document.getElementById("create-form").reset();
 });

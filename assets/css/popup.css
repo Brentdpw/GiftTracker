@@ -1,19 +1,21 @@
 /* popup 1 */
 .popup{
     position:absolute;
-    margin:100px auto;
+    margin:auto 42vw;
     width:300px;
-    height:400px;
+    height:375px;
     font-family:verdana;
     font-size:13px;
+    text-align: left;
     padding:10px;
     background-color:aliceblue;
     border:2px solid;
     border-color: #1ebaa9;
     z-index:100000000000000000;
     display:none
-    }
+}
     
+
 .cancel{
     display:relative;
     cursor:pointer;
@@ -40,6 +42,7 @@
 .center-title{
     text-align: center;
     font-family:verdana;
+    font-weight: bold;
     font-size:16px;
 }
 
@@ -54,7 +57,7 @@ input[type=text], select {
 }
 
       
-#button {
+#popup-button {
     width: 100%;
     background-color: #1ebaa9;
     color: white;

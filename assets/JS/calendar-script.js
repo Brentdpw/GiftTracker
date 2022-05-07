@@ -13,31 +13,51 @@ $(document).ready(function () {
         selectable: true,
         selectHelper: true,
         select: function (start, end, allDay) {
-            var title = prompt('Event Title:');
+            var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+            var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+            // console.log(start);
+            // console.log(end);
 
-            if (title) {
-                var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-                var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+            openPopup();
+            var elementButton = document.querySelector("#popup-button");
+            var input = document.getElementById("titleAct");
+            var count = 0;
 
-                $.ajax({
-                    url: 'add-event.php',
-                    data: 'title=' + title + '&start=' + start + '&end=' + end,
-                    type: "POST",
-                    success: function (data) {
-                        displayMessage("Added Successfully");
-                    }
-                });
-                calendar.fullCalendar('renderEvent',
-                        {
-                            title: title,
-                            start: start,
-                            end: end,
-                            allDay: allDay
-                        },
-                true
-                        );
-            }
-            calendar.fullCalendar('unselect');
+            
+
+            elementButton.addEventListener("click", function(){
+                count +=1;
+                var title = input.value;
+                if (count < 2) {
+                    // console.log(start);
+
+                    $.ajax({
+                        url: 'add-event.php',
+                        data: 'title=' + title + '&start=' + start + '&end=' + end,
+                        type: "POST",
+                        success: function (data) {
+                            displayMessage("Added Successfully");
+                        }
+                    });
+                    calendar.fullCalendar('renderEvent',
+                            {
+                                title: title,
+                                start: start,
+                                end: end,
+                                allDay: allDay
+                            },
+                    true
+                            );
+                }
+                start = "";
+                end = "";
+                calendar.fullCalendar('unselect');
+                closePopup();
+            });
+            document.getElementById("create-form").reset();
+
+            
+            
         },
         
         editable: true,
@@ -55,6 +75,7 @@ $(document).ready(function () {
                 },
         eventClick: function (event) {
             var deleteMsg = confirm("Do you really want to delete?");
+
             if (deleteMsg) {
                 $.ajax({
                     type: "POST",
@@ -76,4 +97,13 @@ $(document).ready(function () {
 function displayMessage(message) {
         $(".response").html("<div class='success'>"+message+"</div>");
     setInterval(function() { $(".success").fadeOut(); }, 1000);
+}
+
+/* create-popup */
+function openPopup() {
+    document.getElementById('create-pupup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('create-pupup').style.display = 'none';
 }
