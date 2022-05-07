@@ -24,9 +24,7 @@
         <link rel="stylesheet" href="./fullcalendar/calendar-style.css">
         <link rel="stylesheet" href="fullcalendar/fullcalendar.min.css" />
         
-        <title>User Home</title>
-              
-
+        <title>User Home</title>      
     </head>
 
     <body>
@@ -51,8 +49,6 @@
             </div>
         </header>
 
-            
-
         <div class="calendar">
             <div class="response"></div>
             <div id='calendar'></div>
@@ -61,7 +57,7 @@
         <script src="fullcalendar/lib/jquery.min.js"></script>
         <script src="fullcalendar/lib/moment.min.js"></script>
         <script src="fullcalendar/fullcalendar.min.js"></script>
+        <script src="./assets/JS/calendar-script.js"></script>
 
-        <script src="./assets/JS/script.js"></script>
     </body>
 </html>

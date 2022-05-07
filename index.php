@@ -43,7 +43,7 @@
 
         <div class="header">
             <h1>
-                GiftTracker - Home
+                GiftTracker
             </h1>
         </div>
 
