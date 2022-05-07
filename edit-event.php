@@ -7,7 +7,7 @@ $start = $_POST['start'];
 $end = $_POST['end'];
 
 $sqlUpdate = "UPDATE calendar SET title='" . $title . "',start='" . $start . "',end='" . $end . "' WHERE id=" . $id;
-mysqli_query($conn, $sqlUpdate)
+mysqli_query($conn, $sqlUpdate);
 mysqli_close($conn);
 
 ?>
