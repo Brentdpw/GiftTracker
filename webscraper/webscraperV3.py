@@ -34,7 +34,7 @@ for items in productPrice[:5]:
     price = "€"+ items.get('content').replace('.', ',')
     output.append(price)
 
-productDelivery = soup.find_all('div', {'class': 'product-delivery'})
+productDelivery = soup.find_all('div', {'class': 'product-delivery-highlight'})
 # print("Product delivery: " + productDelivery.get_text())
 for items in productDelivery[:5]:
     delivery = items.get_text()
@@ -50,33 +50,37 @@ for items in productButton[:5]:
 # orderUrl = 'https://www.bol.com/' + productButton.get('href')
 # print("Order url: " + orderUrl)
 
-productPhoto = soup.find_all('img')
-# print(productPhoto.get('src'))
-for items in productPhoto[:9]:
-    image = str(items.get('src'))
-    #Gaat problemen vormen als er een afbeelding nie staa (lijn word niet gevuld dus count gaat 1 minder zijn)
-    if image != 'None':        
-        output.append(image)
+# productPhoto = soup.find_all('img')
+# # print(productPhoto.get('src'))
+# for items in productPhoto[:9]:
+#     image = str(items.get('src'))
+#     #Gaat problemen vormen als er een afbeelding nie staa (lijn word niet gevuld dus count gaat 1 minder zijn)
+#     if image != 'None':        
+#         output.append(image)
+
+productPhoto = soup.find_all('div', {"class" : "h-o-hidden"})
+for photo in productPhoto[:5]:
+    img = photo.find('img')#.attrs['src']
+    image = img.get('src') or img.get('data-src')
+    output.append(image)
         
-count1 = 0
-count2 = 5
-count3 = 10
-count4 = 15
-count5 = 20
-count6 = 25
-for n in range(5):
-    print(output[count1]+"\n"+output[count2]+"\n"+output[count3]+"\n"+output[count4]+"\n"+output[count5]+"\n"+output[count6])
-    print("\n")
-    count1 += 1
-    count2 += 1
-    count3 += 1
-    count4 += 1
-    count5 += 1
-    count6 += 1
-
-
-
+# count1 = 0
+# count2 = 5
+# count3 = 10
+# count4 = 15
+# count5 = 20
+# count6 = 25
 # for n in range(5):
-#     print(output[n]+"\n"+output[n+5]+"\n"+output[n+10]+"\n"+output[n+15]+"\n"+output[n+20]+"\n"+output[n+25])
+#     print(output[count1]+"\n"+output[count2]+"\n"+output[count3]+"\n"+output[count4]+"\n"+output[count5]+"\n"+output[count6])
 #     print("\n")
-#     n += 1
+#     count1 += 1
+#     count2 += 1
+#     count3 += 1
+#     count4 += 1
+#     count5 += 1
+#     count6 += 1
+
+for n in range(5):
+    print(output[n]+"\n"+output[n+5]+"\n"+output[n+10]+"\n"+output[n+15]+"\n"+output[n+20]+"\n"+output[n+25])
+    print("\n")
+    n += 1
