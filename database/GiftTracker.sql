@@ -10,6 +10,7 @@ primary key(gift_id));
 
 create table calendar(
 id int not null unique auto_increment,
+username varchar(255) not null,
 title varchar(255) COLLATE utf8_bin not null,
 start datetime not null,
 end datetime DEFAULT NULL
@@ -25,7 +26,7 @@ create table user(
 user_id int not null unique auto_increment,
 firstname varchar(255) not null,
 lastname varchar(255) not null,
-username varchar(255) not null,
+username varchar(255) not null unique,
 birthdate date not null,
 gender varchar (50) not null,
 email varchar (255) not null,
