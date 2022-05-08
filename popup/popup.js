@@ -22,10 +22,10 @@ ElementButton.addEventListener("click", function(){
 
 
 /* search-delete-popup */
-// function eventClickOpenPopup() {
-//     document.getElementById('edit-popup-open').style.display = 'block';
-// }
+function eventClickOpenPopup() {
+    document.getElementById('edit-popup-open').style.display = 'block';
+}
 
-// function eventClickClosePopup() {
-//     document.getElementById('edit-popup-open').style.display = 'none';
-// }
+function eventClickClosePopup() {
+    document.getElementById('edit-popup-open').style.display = 'none';
+}

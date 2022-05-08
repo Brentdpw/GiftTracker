@@ -54,7 +54,7 @@
             <div id='calendar'></div>
 
             <div id="create-pupup" class="popup">
-                <div class="cancel" onclick="closePopup();"><img src="./assets/images/kruis.png" alt="" class="cancel"></div>
+                <div class="cancel" onclick="closePopup();"><img src="./assets/images/kruis.png" alt="cancel" class="cancel"></div>
                 <form id="create-form"> 
                     <p class="center-title">Create activity</p>
 
@@ -62,7 +62,7 @@
                     <input type="text" id="titleAct" name="TitleAct"><br>
 
                     <label for="start_date">Start date:</label><br>
-                    <input type="date" id="start_date" name="start_date"><br>
+                    <input type="text" id="start_date" name="start_date"><br>
                     <label for="end_date">End date:</label><br>
                     <input type="date" id="end_date" name="end_date">
 

@@ -23,7 +23,8 @@ $(document).ready(function () {
             var input = document.getElementById("titleAct");
             var count = 0;
 
-            
+            $("input#start_date").replaceWith("<input type=date id=start_date name=start_date value="+ start + " readonly>");
+            $("input#end_date").replaceWith("<input type=date id=end_date name=end_date value="+ end + " readonly>");
 
             elementButton.addEventListener("click", function(){
                 count +=1;
@@ -75,6 +76,13 @@ $(document).ready(function () {
                 },
         eventClick: function (event) {
             var deleteMsg = confirm("Do you really want to delete?");
+            // var title = event.title;
+            // var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+            // var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+            
+            // $("input#start_date").replaceWith("<input type=date id=start_date name=start_date value="+ start + " readonly>");
+            // $("input#end_date").replaceWith("<input type=date id=end_date name=end_date value="+ end + " readonly>");
+            // document.getElementById("delete-form").reset();
 
             if (deleteMsg) {
                 $.ajax({
@@ -110,10 +118,10 @@ function closePopup() {
 
 
 // /* search-delete-popup */
-// function eventClickOpenPopup() {
-//     document.getElementById('edit-popup-open').style.display = 'block';
-// }
+function eventClickOpenPopup() {
+    document.getElementById('edit-popup-open').style.display = 'block';
+}
 
-// function closePopup() {
-//     document.getElementById('edit-popup-open').style.display = 'none';
-// }
+function eventClickClosePopup() {
+    document.getElementById('edit-popup-open').style.display = 'none';
+}
