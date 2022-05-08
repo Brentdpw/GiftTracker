@@ -54,6 +54,7 @@ $(document).ready(function () {
                 end = "";
                 calendar.fullCalendar('unselect');
                 closePopup();
+                reloadPage()
             });
             document.getElementById("create-form").reset();
 
@@ -71,20 +72,27 @@ $(document).ready(function () {
                         type: "POST",
                         success: function (response) {
                             displayMessage("Updated Successfully");
-                        }
+                            reloadPage();
+                        },
                     });
                 },
         eventClick: function (event) {
-            var deleteMsg = confirm("Do you really want to delete?");
-            // var title = event.title;
-            // var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-            // var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+            eventClickOpenPopup();
+            var elementButtonSearch = document.querySelector("#search-Confirm");
+            var elementButtonDelete = document.querySelector("#delete-activity");
+            var searchInput = document.getElementById("search-input");
+            var title = event.title;
+            var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+            var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+            $("input#TitleAct").replaceWith("<input type=text id=TitleAct name=TitleAct value=" + title + " readonly>");
+            $("input#start_date-search").replaceWith("<input type=date id=start_date-search name=start_date value="+ start + " readonly>");
+            $("input#end_date-search").replaceWith("<input type=date id=end_date-search name=end_date value="+ end + " readonly>");
             
-            // $("input#start_date").replaceWith("<input type=date id=start_date name=start_date value="+ start + " readonly>");
-            // $("input#end_date").replaceWith("<input type=date id=end_date name=end_date value="+ end + " readonly>");
-            // document.getElementById("delete-form").reset();
-
-            if (deleteMsg) {
+            // elementButtonSearch.addEventListener("click", function(){
+                // reloadPage();
+            // };
+            
+            elementButtonDelete.addEventListener("click", function(){
                 $.ajax({
                     type: "POST",
                     url: "delete-event.php",
@@ -96,7 +104,10 @@ $(document).ready(function () {
                         }
                     }
                 });
-            }
+                eventClickClosePopup();
+                reloadPage();
+            });
+            
         }
 
     });
@@ -124,4 +135,8 @@ function eventClickOpenPopup() {
 
 function eventClickClosePopup() {
     document.getElementById('edit-popup-open').style.display = 'none';
+}
+
+function reloadPage(){
+    setTimeout(function(){ document.location.reload(true); }, 200);
 }

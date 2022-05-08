@@ -51,7 +51,6 @@
 
         <div class="calendar">
             <div class="response"></div>
-            <div id='calendar'></div>
 
             <div id="create-pupup" class="popup">
                 <div class="cancel" onclick="closePopup();"><img src="./assets/images/kruis.png" alt="cancel" class="cancel"></div>
@@ -69,6 +68,31 @@
                     <input type="button" value="Create" id="popup-button">
                 </form>
             </div>
+
+            <div id="edit-popup-open" class="popup-edit">
+                <div class="cancel" onclick="eventClickClosePopup();"><img src="./assets/images/kruis.png" alt="cancel" class="cancel"></div>
+
+                <form id="delete-form">
+                    <p class="center-title">Your activity</p>
+
+                    <label for="TitleAct">Title:</label><br>
+                    <input type="text" id="TitleAct" name="TitleAct"><br>
+                    
+                    <label for="start_date">Start date:</label><br>
+                    <input type="date" id="start_date-search" name="start_date"><br>
+                    <label for="end_date">End date:</label><br>
+                    <input type="date" id="end_date-search" name="end_date">
+
+
+                    <label for="search-input">Search for a gift:</label><br>
+                    <input type="text" id="search-input" name="search-input" placeholder="Search"><br>
+                    <input type="submit" value="Search" id="search-Confirm">
+                    <input type="button" value="Delete" id="delete-activity">
+
+                </form>
+            </div>
+
+            <div id='calendar'></div>
             
         </div>
         
