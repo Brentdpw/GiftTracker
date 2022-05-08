@@ -17,3 +17,15 @@ ElementButton.addEventListener("click", function(){
     closePopup()
     document.getElementById("create-form").reset();
 });
+
+
+
+
+/* search-delete-popup */
+// function eventClickOpenPopup() {
+//     document.getElementById('edit-popup-open').style.display = 'block';
+// }
+
+// function eventClickClosePopup() {
+//     document.getElementById('edit-popup-open').style.display = 'none';
+// }

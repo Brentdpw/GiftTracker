@@ -9,13 +9,13 @@
 </head>
 <body>
 
-    <button onClick="openPopup();">click here</button>
+    <button onClick="eventClickOpenPopup();">click here</button>
 
-    <div id="test" class="popup-edit">
-        <div class="cancel" onclick="closePopup();"><img src="./kruis.png" alt="" class="cancel"></div>
+    <div id="edit-popup-open" class="popup-edit">
+        <div class="cancel" onclick="eventClickClosePopup();"><img src="./kruis.png" alt="" class="cancel"></div>
 
-        <form action="">
-            <p class="center-title">Edit activity</p>
+        <form>
+            <p class="center-title">Your activity</p>
 
             <label for="TitleAct">Title:</label><br>
             <input type="text" id="TitleAct" name="TitleAct"><br>
@@ -25,8 +25,11 @@
             <label for="end_date">End date:</label><br>
             <input type="date" id="end_date" name="end_date">
 
-            <input type="submit" value="Save" class="save-user">
-            <input type="button" value="Delete" class="delete-user">
+
+            <label for="search-input">Search for a gift:</label><br>
+            <input type="text" id="search-input" name="search-input" placeholder="Search"><br>
+            <input type="submit" value="Search" class="search-Confirm">
+            <input type="button" value="Delete" class="delete-activity">
 
         </form>
     </div>

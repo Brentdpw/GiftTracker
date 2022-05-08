@@ -107,3 +107,13 @@ function openPopup() {
 function closePopup() {
     document.getElementById('create-pupup').style.display = 'none';
 }
+
+
+// /* search-delete-popup */
+// function eventClickOpenPopup() {
+//     document.getElementById('edit-popup-open').style.display = 'block';
+// }
+
+// function closePopup() {
+//     document.getElementById('edit-popup-open').style.display = 'none';
+// }
