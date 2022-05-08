@@ -51,7 +51,7 @@
 
             <div class="column leftColumn">
                 <div class="container-preview">
-                    <img src="./assets/images/kalender.png" alt="kalender" class="kalender">
+                    <img src="./assets/images/preview.png" alt="kalender" class="kalender">
                 </div>
             </div>
 
