@@ -1,9 +1,9 @@
 /* popup 1 */
 .popup{
     position:absolute;
-    margin:auto 42vw;
+    margin: 285px 42vw;
     width:300px;
-    height:375px;
+    height:380px;
     font-family:verdana;
     font-size:13px;
     text-align: left;
@@ -42,7 +42,7 @@
     text-align: center;
     font-family:verdana;
     font-weight: bold;
-    font-size:16px;
+    font-size:18px;
 }
 
 input[type=text], select {
@@ -104,7 +104,7 @@ input[type=date], select {
     position:absolute;
     margin: 285px 42vw;
     width:300px;
-    height:505px;
+    height:515px;
     font-family:verdana;
     font-size:13px;
     text-align: left;
