@@ -72,7 +72,7 @@
             <div id="edit-popup-open" class="popup-edit">
                 <div class="cancel" onclick="eventClickClosePopup();"><img src="./assets/images/kruis.png" alt="cancel" class="cancel"></div>
 
-                <form id="delete-form">
+                <form action="buypage.php" method="post" id="delete-form">
                     <p class="center-title">Your activity</p>
 
                     <label for="TitleAct">Title:</label><br>
