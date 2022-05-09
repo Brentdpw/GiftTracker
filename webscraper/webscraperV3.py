@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+import sys
+from flask import Flask, render_template, request, url_for, redirect
+app = Flask(__name__)
 # search word
 search = input("What are you searching for? ")
 # providing url
@@ -15,6 +18,7 @@ data = BeautifulSoup(req.text, 'html.parser')
     # print(li.text, end=" ")
 soup = data.find('ul', {'class': 'list-view product-list js_multiple_basket_buttons_page'})
 output = []
+
 productCreator = soup.find_all('a', {'data-test' :'party-link'})
 # print("Product creator: " + productCreator.get_text())
 # print(len(productCreator))
@@ -84,3 +88,34 @@ for n in range(5):
     print(output[n]+"\n"+output[n+5]+"\n"+output[n+10]+"\n"+output[n+15]+"\n"+output[n+20]+"\n"+output[n+25])
     print("\n")
     n += 1
+
+@app.route("/")
+def home():
+    return render_template("webscraping.html")
+
+# @app.route('/success/<name>')
+# def success(name):
+#    return 'welcome %s' % name
+
+# @app.route('/webscraping.py',methods = ['POST', 'GET'])
+# def search():
+#    if request.method == 'POST':
+#         item = request.form['input']
+#         return "The item you're looking for is: " + item
+#     #   return redirect(url_for('success',name = user))
+#         return render_template("products.html")
+#    else:
+#       item = request.args.get('input')
+#       return "The item you're looking for is: " + item
+   
+    #   return redirect(url_for('success',name = user))
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
+# python script gescrapete data visueel gemaakt in webscraper.html
+htmlContent = f"<html><head></head> <body> <p>{output}</p> </body></html>"
+
+with open("webscraper.html", "w") as html_file:
+    html_file.write(htmlContent)
+    print("html file Successfully created!!")
