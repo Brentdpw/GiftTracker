@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
         <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
         <link rel="stylesheet" href="./assets/css/popup.css">
 
         <!--Calendar-->
@@ -40,7 +41,7 @@
                 <nav>
                     <ul>
 
-                        <li><a href="User-edit-user.php">Settings</a></li>
+                        <li><a href="user-edit-user.php">Settings</a></li>
 
                         <li><a href="logout.php">Logout</a></li>
 
@@ -95,6 +96,14 @@
             <div id='calendar'></div>
             
         </div>
+        
+        <br>
+
+        <footer>
+            <div class="footer-container">
+                All rights deserved © GiftTracker 2022
+            </div>
+        </footer>
         
         <script src="fullcalendar/lib/jquery.min.js"></script>
         <script src="fullcalendar/lib/moment.min.js"></script>

@@ -10,16 +10,19 @@
         $newBirthdate = $_POST['edit-birthdate'];
         $newEmail = $_POST['edit-email'];
         
-        $query = "UPDATE user SET firstname='$newFirstname', lastname='$newLastname', birthdate='$newBirthdate', email='$newEmail' WHERE user_id='$user_id' ";
-        $query_run = mysqli_query($conn, $query);
+        if(!empty($newFirstname) && !empty($newLastname) && !empty($newBirthdate) && !empty($newEmail)){
+            //$loggedUser = ;
+            $sql = "UPDATE user SET firstname = '$newFirstname', lastname = '$newLastname', birthdate = '$newBirthdate', email = '$newEmail' WHERE username = '$loggedUser'";
 
-        if($query_run)
-        {
-            header('Location: adminHome.php'); 
+            $results = mysqli_query($conn, $sql);
+
+            header("Location: adminHome.php?message=<div class='alert alert-succes'>Updated!</div>"); 
+            exit;
         }
         else
         {
-            header('Location: adminHome.php'); 
+            header("Location: adminHome.php?message=<div class='alert alert-succes'>Not Updated!</div>"); 
+            exit;
         }
     }
 ?>

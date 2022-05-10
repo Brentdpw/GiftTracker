@@ -60,7 +60,7 @@
 
             <br>
 
-            <form action="User-edit-UserEditor.php" method="POST" enctype="multipart/form-data" class="login-email">
+            <form action="user-edit-userEditor.php" method="POST" enctype="multipart/form-data" class="login-email">
                 <?php
                     $currentUser = $_SESSION['username'];
                     $sql = "SELECT * FROM user WHERE username = '$currentUser'";

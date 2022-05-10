@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
         <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/alerts.css">
 
         <title>Admin Home</title>
     </head>
@@ -41,6 +42,15 @@
                 </nav>
             </div>
         </header>
+
+        <?php
+            if(isset($_GET['message'])){
+                $message = $_GET['message'];
+                echo $message;
+            }
+        ?>
+
+        <br>
 
         <div>
             <table class="adminTable">
@@ -76,7 +86,7 @@
                                     <td><?= $row["email"];      ?></td>
                                     <td><?= $row["UserAdmin"];  ?></td>
                                     <td> 
-                                        <form action="Admin-edit-user.php" method="POST">
+                                        <form action="admin-edit-user.php" method="POST">
                                             <input type="hidden" name="edit_id" value="<?= $row["user_id"];?>">
                                             <button type="submit" name="edit-user" class="btn-edit">Edit</button>
                                         </form>
