@@ -41,7 +41,13 @@
             <?php
                 if (isset($_POST['search-input'])) {
                     $input = $_POST['search-input'];
-                    echo($input);
+                    $myfile = fopen("echoToPy.txt", "w") or die("Unable to open file!");
+                    fwrite($myfile, $input);
+                    fclose($myfile);            
+                    ?>
+                    <br>
+                    <br>
+                    <?php
                     $command = escapeshellcmd('Bolcom.py');        
                     $output = shell_exec($command);
                     $outp = explode("?",$output);

@@ -1,9 +1,10 @@
-from matplotlib.font_manager import json_dump
 import requests
 from bs4 import BeautifulSoup
-import os, sys, json
 # search word
-search = "voetbal"
+f = open("echoToPy.txt", "r")
+f = f.read()
+search = f
+
 # providing url
 url = 'https://www.bol.com//be/nl/s/?searchtext=' + search
   
@@ -31,7 +32,7 @@ for items in productTitle[:5]:
 productPrice = soup.find_all('meta', {'itemprop': 'price'})
 # print("Product price: " + productPrice.get('content').replace('.', ',') + " euro")
 for items in productPrice[:5]:
-    price = "€"+ items.get('content').replace('.', ',')
+    price = items.get('content').replace('.', ',')+" euro" # + "€"
     output.append(price)
 productDelivery = soup.find_all('div', {'class': 'product-delivery-highlight'})
 # print("Product delivery: " + productDelivery.get_text())
@@ -59,14 +60,14 @@ count3 = 10
 count4 = 15
 count5 = 20
 count6 = 25
-array =[]
 for n in range(5):
-    array.append(output[count1]+" "+output[count2]+" "+output[count3]+" "+output[count4]+" "+output[count5]+" "+output[count6])
+    print(output[count1]+" "+output[count2]+" "+output[count3]+" "+output[count4]+" "+output[count5]+" "+output[count6])
+    print("?")
     count1 += 1
     count2 += 1
     count3 += 1
     count4 += 1
     count5 += 1
     count6 += 1
-print(array)
+
 
