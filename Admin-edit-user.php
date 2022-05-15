@@ -63,7 +63,7 @@
                     {
                         ?>
 
-                        <form action="Admin-edit-UserEditor.php" method="POST" class="login-email">
+                        <form action="admin-edit-userEditor.php" method="POST" enctype="multipart/form-data" class="login-email">
 
                             <div class="input-group">
                                 <input type="text" name="edit-firstname" value="<?php echo $row['firstname'] ?>" class="form-control" required>

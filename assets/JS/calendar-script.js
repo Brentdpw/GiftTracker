@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var calendar = $('#calendar').fullCalendar({
         editable: true,
-        events: "fetch-event.php",
+        events: "calendar-get_data.php",
         displayEventTime: false,
         eventRender: function (event, element, view) {
             if (event.allDay === 'true') {
@@ -33,7 +33,7 @@ $(document).ready(function () {
                     // console.log(start);
 
                     $.ajax({
-                        url: 'add-event.php',
+                        url: 'calendar-add_data.php',
                         data: 'title=' + title + '&start=' + start + '&end=' + end,
                         type: "POST",
                         success: function (data) {
@@ -67,7 +67,7 @@ $(document).ready(function () {
                     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
                     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
                     $.ajax({
-                        url: 'edit-event.php',
+                        url: 'calendar-edit_data.php',
                         data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
                         type: "POST",
                         success: function (response) {
@@ -95,7 +95,7 @@ $(document).ready(function () {
             elementButtonDelete.addEventListener("click", function(){
                 $.ajax({
                     type: "POST",
-                    url: "delete-event.php",
+                    url: "calendar-delete_data.php",
                     data: "&id=" + event.id,
                     success: function (response) {
                         if(parseInt(response) > 0) {

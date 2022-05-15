@@ -6,7 +6,6 @@
         header("Location: index.php");
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,23 +21,45 @@
     </head>
     <body>
         <header>
-                    <div class="header-container">
-                        <a href="userHome.php">
-                            <img src="./assets/images/User_icon_2.svg.png" alt="icon" class="icon">
-                        </a>
-                        
-                        <?php echo "<p class='icon'>" . $_SESSION['username'] . "</p>"; ?>
-                        
-                        <nav>
-                            <ul>
-
-                                <li><a href="User-edit-user.php">Settings</a></li>
-
-                                <li><a href="logout.php">Logout</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
+            <div class="header-container">
+                <a href="userHome.php">
+                    <img src="./assets/images/User_icon_2.svg.png" alt="icon" class="icon">
+                </a>                
+                <?php echo "<p class='icon'>" . $_SESSION['username'] . "</p>"; ?>                
+                <nav>
+                    <ul>
+                        <li><a href="User-edit-user.php">Settings</a></li>
+                        <li><a href="logout.php">Logout</a></li>
+                    </ul>
+                </nav>                
+            </div>            
         </header>
+
+        <br><br>
+        <!-- <input type="text" class="inputPy"> -->
+        <div>
+            <?php
+                if (isset($_POST['search-input'])) {
+                    $input = $_POST['search-input'];
+                    $myfile = fopen("echoToPy.txt", "w") or die("Unable to open file!");
+                    fwrite($myfile, $input);
+                    fclose($myfile);            
+                    ?>
+                    <br>
+                    <br>
+                    <?php
+                    $command = escapeshellcmd('Bolcom.py');        
+                    $output = shell_exec($command);
+                    $outp = explode("?",$output);
+                    foreach ($outp as $x){
+                        echo($x);
+                        ?>
+                            <br>
+                            <br>
+                        <?php
+                    }
+                }
+            ?>
+        </div>            
     </body>
 </html>

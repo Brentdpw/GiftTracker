@@ -9,6 +9,7 @@
         $newLastname = $_POST['edit-lastname'];
         $newBirthdate = $_POST['edit-birthdate'];
         $newEmail = $_POST['edit-email'];
+        //$newPassword = $_POST['edit-password'];
 
         if(!empty($newFirstname) && !empty($newLastname) && !empty($newBirthdate) && !empty($newEmail)){
             $loggedInUser = $_SESSION['username'];
@@ -16,11 +17,11 @@
 
             $results = mysqli_query($conn, $sql);
 
-            header("Location: User-edit-user.php?message=<div class='alert alert-succes'>Updated!</div>");
+            header("Location: user-edit-user.php?message=<div class='alert alert-succes'>Updated!</div>");
             exit;
 
         }else{
-            header("Location: User-edit-user.php?message=<div class='alert alert-succes'>Not Updated!</div>");
+            header("Location: user-edit-user.php?message=<div class='alert alert-succes'>Not Updated!</div>");
             exit;
         }
     }

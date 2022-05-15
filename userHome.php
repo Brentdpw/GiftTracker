@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
         <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
         <link rel="stylesheet" href="./assets/css/popup.css">
 
         <!--Calendar-->
@@ -40,7 +41,7 @@
                 <nav>
                     <ul>
 
-                        <li><a href="User-edit-user.php">Settings</a></li>
+                        <li><a href="user-edit-user.php">Settings</a></li>
 
                         <li><a href="logout.php">Logout</a></li>
 
@@ -72,7 +73,7 @@
             <div id="edit-popup-open" class="popup-edit">
                 <div class="cancel" onclick="eventClickClosePopup();"><img src="./assets/images/kruis.png" alt="cancel" class="cancel"></div>
 
-                <form id="delete-form">
+                <form action="buypage.php" method="post" id="delete-form">
                     <p class="center-title">Your activity</p>
 
                     <label for="TitleAct">Title:</label><br>
@@ -95,6 +96,14 @@
             <div id='calendar'></div>
             
         </div>
+        
+        <br>
+
+        <footer>
+            <div class="footer-container">
+                All rights deserved © GiftTracker 2022
+            </div>
+        </footer>
         
         <script src="fullcalendar/lib/jquery.min.js"></script>
         <script src="fullcalendar/lib/moment.min.js"></script>
