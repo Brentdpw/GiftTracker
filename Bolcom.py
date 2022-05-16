@@ -67,8 +67,14 @@ for items in productPhoto[:9]:
     if image != 'None':        
         imgList.append(image)
 
-
 for n in range(5):
-    print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    print('<div class="product">', '<div class="verkoper">', creatorList[n] ,'</div>', '<div class="productnaam">',titleList[n] ,'</div>', '<div class="prijs">', priceList[n],'</div>', '<div class="delivery">', deliveryList[n],'</div>', '<div class="link">', buttonList[n] ,'</div>', '<img src=',imgList[n],'alt=""> </div>')
+    print('<br>')
     print()
     n+1
+
+#for n in range(5):
+    #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    #print()
+    #n+1
