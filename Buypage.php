@@ -47,9 +47,8 @@
                     ?>
                     <br>
                     <br>
-                    <?php
-                    $command = escapeshellcmd('Bolcom.py');        
-                    $output = shell_exec($command);
+                    <?php        
+                    $output = shell_exec('python bolcom.py');
                     $outp = explode("?",$output);
                     foreach ($outp as $x){
                         echo($x);
