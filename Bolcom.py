@@ -66,10 +66,6 @@ for items in productPhoto[:9]:
     image = str(items.get('src'))
     if image != 'None':        
         imgList.append(image)
-<<<<<<< HEAD
-
-=======
->>>>>>> 62b64ee12741ed59c9e4ea8ae9aa9cd3b81673dd
 
 for n in range(5):
     #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
@@ -77,7 +73,7 @@ for n in range(5):
     print()
     n+1
 
-for n in range(5):
-    print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
-    print()
-    n+1
+#for n in range(5):
+    #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    #print()
+    #n+1
