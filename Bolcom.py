@@ -21,53 +21,56 @@ output = []
 productCreator = soup.find_all('a', {'data-test' :'party-link'})
 # print("Product creator: " + productCreator.get_text())
 # print(len(productCreator))
+creatorList = []
 for items in productCreator[:5]:
     creator = items.get_text()
-    output.append(creator)
+    creatorList.append(creator)
+
 productTitle = soup.find_all('a', {'class' :'product-title px_list_page_product_click'})
 # print("Product title: " + productTitle.get_text())
+titleList = []
 for items in productTitle[:5]:
     title = items.get_text()
-    output.append(title)
+    titleList.append(title)
 productPrice = soup.find_all('meta', {'itemprop': 'price'})
 # print("Product price: " + productPrice.get('content').replace('.', ',') + " euro")
+
+priceList = []
 for items in productPrice[:5]:
     price = items.get('content').replace('.', ',')+" euro" # + "€"
-    output.append(price)
+    priceList.append(price)
+
+
 productDelivery = soup.find_all('div', {'class': 'product-delivery-highlight'})
 # print("Product delivery: " + productDelivery.get_text())
+deliveryList = []
 for items in productDelivery[:5]:
     delivery = items.get_text()
-    output.append(delivery)
+    deliveryList.append(delivery)
+
+
 # productSeller = soup.find('div', {'class': 'product-seller'})
 # print("Product seller: " + productSeller.get_text().strip())
 productButton = soup.find_all('a', {'class': 'product-title px_list_page_product_click'}, href = True)
+buttonList = []
 for items in productButton[:5]:
     link = 'https://www.bol.com/' + str(items.get('href'))
-    output.append(link)
+    buttonList.append(link)
 # orderUrl = 'https://www.bol.com/' + productButton.get('href')
 # print("Order url: " + orderUrl)
 productPhoto = soup.find_all('img')
 # print(productPhoto.get('src'))
+
+imgList = []
 for items in productPhoto[:9]:
     image = str(items.get('src'))
     if image != 'None':        
-        output.append(image)
+        imgList.append(image)
 
-count1 = 0
-count2 = 5
-count3 = 10
-count4 = 15
-count5 = 20
-count6 = 25
+
 for n in range(5):
-    print(output[count1]+" "+output[count2]+" "+output[count3]+" "+output[count4]+" "+output[count5]+" "+output[count6])
-    print("?")
-    count1 += 1
-    count2 += 1
-    count3 += 1
-    count4 += 1
-    count5 += 1
-    count6 += 1
-
+    #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    print('<div class="product">', '<div class="verkoper">', creatorList[n] ,'</div>', '<div class="productnaam">',titleList[n] ,'</div>', '<div class="prijs">', priceList[n],'</div>', '<div class="delivery">', deliveryList[n],'</div>', '<div class="link">', buttonList[n] ,'</div>', '<img">',imgList[n] ,'</img>', '</div>')
+    print()
+    n+1
 
