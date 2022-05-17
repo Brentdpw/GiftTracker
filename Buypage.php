@@ -47,16 +47,8 @@
                     ?>
                     <br>
                     <br>
-                    <?php        
-                    $output = shell_exec('python bolcom.py');
-                    $outp = explode("?",$output);
-                    foreach ($outp as $x){
-                        echo($x);
-                        ?>
-                            <br>
-                            <br>
-                        <?php
-                    }
+                    <?php
+                    
                 }
             ?>
         </div>            

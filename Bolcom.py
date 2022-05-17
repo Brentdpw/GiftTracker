@@ -1,3 +1,4 @@
+import mysql.connector
 import requests
 from bs4 import BeautifulSoup
 # search word
@@ -67,6 +68,13 @@ for items in productPhoto[:9]:
     if image != 'None':        
         imgList.append(image)
 
+
+
+#for n in range(5):
+    #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    #print()
+    #n+1
+
 for n in range(5):
     #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
     print('<div class="product">', '<div class="verkoper">', creatorList[n] ,'</div>', '<div class="productnaam">',titleList[n] ,'</div>', '<div class="prijs">', priceList[n],'</div>', '<div class="delivery">', deliveryList[n],'</div>', '<div class="link">', buttonList[n] ,'</div>', '<img src=',imgList[n],'alt=""> </div>')
@@ -74,7 +82,25 @@ for n in range(5):
     print()
     n+1
 
-#for n in range(5):
-    #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
-    #print()
-    #n+1
+mydb = mysql.connector.connect(
+  host="ID361990_GiftTracker.db.webhosting.be",
+  user="ID361990_GiftTracker",
+  password="gifttracker123",
+  database="ID361990_GiftTracker"
+)
+
+for n in range(5):
+    mycursor = mydb.cursor()
+
+    sql = "INSERT INTO gift (zoekterm, seller, title, price, delivery, button, imgLink) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    val = [
+        
+    (search, creatorList[n], titleList[n], priceList[n], deliveryList[n], buttonList[n], imgList[n]),
+
+    ]
+
+    mycursor.executemany(sql, val)
+
+    mydb.commit()
+
+    print(mycursor.rowcount, "was inserted.")
