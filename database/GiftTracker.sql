@@ -5,7 +5,12 @@ primary key(prefrences_id));
 
 create table gift(
 gift_id int not null unique auto_increment,
-gift_Name int not null,
+seller varchar(255) not null,
+title varchar(255) not null,
+price int not null, 
+delivery varchar (50) not null,
+button varchar(255) not null,
+imgLink varchar(1000),
 primary key(gift_id));
 
 create table calendar(
