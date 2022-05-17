@@ -4,6 +4,7 @@ preferences_Name int not null,
 primary key(prefrences_id));
 
 create table gift(
+zoekterm varchar(255) not null,
 gift_id int not null unique auto_increment,
 seller varchar(255) not null,
 title varchar(255) not null,
