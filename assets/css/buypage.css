@@ -1,0 +1,76 @@
+body{
+  margin: 0;
+  background-color: aliceblue;
+}
+
+.form-div{
+  background-color: aliceblue;
+}
+
+input[type="submit"]{
+
+  width: 80%;
+  background-color: #1ebaa9;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 20px;
+  margin: 6px 10%;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+li {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+h4{
+  margin-left: 4px;
+}
+
+.divCSS > input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* ... */
+}
+
+.divCSS > input[type="radio"] {
+  /* remove standard background appearance... */
+
+  /* create custom radio button appearance */
+  display: inline-block;
+  width: 20px;
+  height: 20px;  
+  padding: 3px;
+  background-clip: content-box;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-right: 0;
+}
+
+.divCSS > input[type="radio"]:checked {
+  background-color: #1ebaa9;
+}
+
+.divCSS {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #060c3b;
+  font-weight: 500;
+}
+
+.divCSS > label {
+  margin-right: 4px;
+}
+
+.divCSS > input[type='radio']:hover {
+  box-shadow: 0 0 6px 0px green inset;
+}
+
+.divCSS > input[type='radio']:focus {
+ outline: 1px solid green;
+}
+

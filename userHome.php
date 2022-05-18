@@ -83,11 +83,8 @@
                     <input type="date" id="start_date-search" name="start_date"><br>
                     <label for="end_date">End date:</label><br>
                     <input type="date" id="end_date-search" name="end_date">
-
-
-                    <label for="search-input">Search for a gift:</label><br>
-                    <input type="text" id="search-input" name="search-input" placeholder="Search"><br>
-                    <input type="submit" value="Search" id="search-Confirm">
+                    
+                    <input type="submit" value="Search for a gift" id="search-Confirm">
                     <input type="button" value="Delete" id="delete-activity">
 
                 </form>
