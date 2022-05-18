@@ -1,8 +1,3 @@
-create table prefrences(
-prefrences_id int not null unique auto_increment,
-preferences_Name int not null,
-primary key(prefrences_id));
-
 create table gift(
 zoekterm varchar(255) not null,
 gift_id int not null unique auto_increment,
