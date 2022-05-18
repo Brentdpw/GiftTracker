@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 basketbal
-=======
-Hoofdtelefoon
->>>>>>> f9a9d906c94ae20d08bf45c4f7587270e4e6a5c0
