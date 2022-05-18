@@ -1,9 +1,5 @@
-create table prefrences(
-prefrences_id int not null unique auto_increment,
-preferences_Name int not null,
-primary key(prefrences_id));
-
 create table gift(
+zoekterm varchar(255) not null,
 gift_id int not null unique auto_increment,
 seller varchar(255) not null,
 title varchar(255) not null,
@@ -37,11 +33,9 @@ gender varchar (50) not null,
 email varchar (255) not null,
 password varchar (255) not null,
 UserAdmin varchar (50) default 'user',
-prefrencescheck int,
 giftcheck int,
 calendarcheck int,
 primary key(user_id),
 foreign key(calendarcheck) references calendar(id),
-foreign key(prefrencescheck) references prefrences(prefrences_id),
 foreign key(giftcheck) references gift(gift_id)
 );
