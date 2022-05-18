@@ -33,11 +33,9 @@ gender varchar (50) not null,
 email varchar (255) not null,
 password varchar (255) not null,
 UserAdmin varchar (50) default 'user',
-prefrencescheck int,
 giftcheck int,
 calendarcheck int,
 primary key(user_id),
 foreign key(calendarcheck) references calendar(id),
-foreign key(prefrencescheck) references prefrences(prefrences_id),
 foreign key(giftcheck) references gift(gift_id)
 );
