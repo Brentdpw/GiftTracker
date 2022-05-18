@@ -76,7 +76,7 @@
                             <input type="radio" name="product" value="Pennenzak">
                             <label for="product">Pennenzak</label>
                             <br>
-                            <input type="radio" name="product" value="Schrijfgerief">
+                            <input type="radio" name="product" value="Pennen">
                             <label for="product">Schrijfgerief</label> 
                             <br>
                             <input type="radio" name="product" value="Notitieblokken">
@@ -139,8 +139,8 @@
                             <input type="radio" name="product" value="Tuinsets">
                             <label for="product">Tuinsets</label>
                             <br>
-                            <input type="radio" name="product" value="Tuintafels">
-                            <label for="product">Tuintafels</label>
+                            <input type="radio" name="product" value="Ligbedden">
+                            <label for="product">Ligbedden</label>
                             <br>
                             <input type="radio" name="product" value="Tuinkasten">
                             <label for="product">Tuinkasten</label>
@@ -148,8 +148,8 @@
                             <input type="radio" name="product" value="Partytenten">
                             <label for="product">Partytenten</label> 
                             <br>
-                            <input type="radio" name="product" value="Tuinhuis">
-                            <label for="product">Tuinhuis</label>
+                            <input type="radio" name="product" value="Tuinafdakjes">
+                            <label for="product">Tuinafdakjes</label>
                             <br>
                             <input type="radio" name="product" value="Tuingereedschap">
                             <label for="product">Gereedschap</label>
@@ -171,7 +171,7 @@
                             <label for="product">Bordspellen</label> 
                             <br>
                             <input type="radio" name="product" value="Knuffels">
-                            <label for="product">Volleybal</label>
+                            <label for="product">Knuffels</label>
                             <br>
                             <input type="radio" name="product" value="Puzzels">
                             <label for="product">Puzzels</label>

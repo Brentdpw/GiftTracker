@@ -94,7 +94,7 @@ mydb = mysql.connector.connect(
   database="ID361990_GiftTracker"
 )
 
-for n in range(5):
+for n in range(0,5):
     mycursor = mydb.cursor()
 
     sql = "INSERT INTO gift (zoekterm, seller, title, price, delivery, button, imgLink) VALUES (%s, %s, %s, %s, %s, %s, %s)"
