@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    color: #1ebaa9;
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT',
+    ' Calibri', 'Trebuchet MS', 'sans-serif';
+}
+
+table {
+    margin: 0 auto;
+    font-size: large;
+    border: 1px solid #1ebaa9;
+}
+
+td {
+    background-color: aliceblue;
+}
+
+th,
+td {
+    font-weight: bold;
+    border: 1px solid #1ebaa9;
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    font-weight: lighter;
+}
