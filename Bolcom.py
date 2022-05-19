@@ -39,7 +39,7 @@ productPrice = soup.find_all('meta', {'itemprop': 'price'})
 
 priceList = []
 for items in productPrice[:5]:
-    price = items.get('content').replace('.', ',')+" euro" # + "€"
+    price = items.get('content')#.replace('.', ',')+" euro" # + "€"
     priceList.append(price)
 
 
