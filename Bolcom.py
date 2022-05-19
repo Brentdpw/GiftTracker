@@ -2,9 +2,9 @@ import mysql.connector
 import requests
 from bs4 import BeautifulSoup
 # search word
-f = open("echoToPy.txt", "r")
-f = f.read()
-search = f
+# f = open("echoToPy.txt", "r")
+# f = f.read()
+search = input("product: ")
 
 # providing url
 url = 'https://www.bol.com//be/nl/s/?searchtext=' + search

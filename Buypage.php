@@ -149,7 +149,7 @@
                             <label for="product">Partytenten</label> 
                             <br>
                             <input type="radio" name="product" value="Tuinafdakjes">
-                            <label for="product">Tuinafdakjes</label>
+                            <label for="product">Tuinafdak</label>
                             <br>
                             <input type="radio" name="product" value="Tuingereedschap">
                             <label for="product">Gereedschap</label>
