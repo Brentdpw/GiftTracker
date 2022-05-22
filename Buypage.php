@@ -37,7 +37,7 @@
         </header>
 
         <div class="form-div">
-            <form method="GET" action="./Buypage.php">
+            <form method="GET" action="./buypage.php">
                 <!-- line 1 -->
                 <ul>   
                     <li>          
