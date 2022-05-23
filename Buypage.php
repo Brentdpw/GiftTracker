@@ -12,13 +12,15 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Buypage</title>
+        <title>buypage</title>
         <link rel="stylesheet" href="./assets/css/login.css">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/loginForms.css">
         <link rel="stylesheet" href="./assets/css/adminHome.css">
         <link rel="stylesheet" href="./assets/css/header.css">
         <link rel="stylesheet" href="./assets/css/buypage.css">
+        <link rel="stylesheet" href="./assets/css/bolVis.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
     </head>
     <body>
         <header>
@@ -66,7 +68,7 @@
                     <li>
                         <!-- School spullen -->
                         <div class="divCSS">
-                            <h4>school materialen</h4>
+                            <h4>School materialen</h4>
                             <input type="radio" name="product" value="Rugzak">
                             <label for="product">Rugzak</label>
                             <br>
@@ -222,13 +224,17 @@
                         </div>
                     </li>
                 </ul>
-                <!-- line 2 -->
-                <!-- <input type="radio" name="product" value="Hoofdtelefoon">
-                <label for="product">Hoofdtelefoon</label>  -->
+
                 <br>
 
-                <input type="submit" value="Search">
+                <input type="submit" value="Search for products">
+                
             </form>
+
+            <a href="userHome.php">
+                <input type="submit" value="Go to home">
+            </a>
+
         </div> 
   
         <?php
@@ -236,46 +242,22 @@
                 $result = $_GET['product'];
                 #echo $result;
             }
-            else echo("U moet een product kiezen of terug gaan naar het hoofdmenu")
-            
-            // $myfile = fopen("echoToPy.txt", "w") or die("Unable to open file!");
-            // fwrite($myfile, $result);
-            // fclose($myfile); 
+            # else echo("U moet een product kiezen of terug gaan naar het hoofdmenu");
+
+            $sql = "SELECT zoekterm, seller, title, price, delivery, button, imgLink FROM gift WHERE zoekterm IN ('$result') ";
+            $result = $conn->query($sql);
+            $conn->close();
         ?>
 
-    </body>
-
-</html>
-
-<?php 
-    $username = "ID361990_GiftTracker"; 
-    $password = "gifttracker123"; 
-    $database = "ID361990_GiftTracker"; 
-    $mysqli = new mysqli("ID361990_GiftTracker.db.webhosting.be", $username, $password, $database); 
-    
-    $sql = "SELECT zoekterm, seller, title, price, delivery, button, imgLink FROM gift WHERE zoekterm IN ('$result') ";
-    $result = $mysqli->query($sql);
-    $mysqli->close();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
- 
-<head>
-    <meta charset="UTF-8">
-    <title>GiftTracker</title>
-    <link rel="stylesheet" href="./assets/css/bolVis.css">
-</head>
-    <body>
-        <section>
+        <div>
             <h1>Products</h1>
             <table>
                 <tr>
-                    <th>Seller</th>
-                    <th>Title</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Link</th>
+                    <th>Salesperson</th>
+                    <th>Products Name</th>
+                    <th>Products Image</th>
+                    <th>Products Price</th>
+                    <th>Check out the website</th>
                 </tr>
 
                 <?php
@@ -287,19 +269,18 @@
                         $price = $rows['price'];
                         $button = $rows['button'];
                 ?>
-                <tr>
-                    <td><?php echo $seller;?></td>
-                    <td><?php echo $title;?></td>
-                    <td><?php echo '<img src=',$image,'>';?></td>
-                    <td><?php echo $price?></td>
-                    <td><?php echo '<a href="',$button,'">','<button>','Click here','</button','</a>';?></td>
-
-                </tr>
+                    <tr>
+                        <td>    <?php echo $seller;?>   </td>
+                        <td>    <?php echo $title;?>    </td>
+                        <td>    <?php echo '<img src=',$image,'>';?>    </td>
+                        <td> €  <?php echo  $price;?>    </td>
+                        <td>    <?php echo '<a href="',$button,'">','<button>','Go to Webshop','</button','</a>';?></td>
+                    </tr>
                 <?php
                     }
                 ?>
             </table>
-        </section>
+        </div>
 
         <br>
         <br>
