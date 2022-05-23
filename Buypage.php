@@ -274,7 +274,7 @@
                         <td>    <?php echo $title;?>    </td>
                         <td>    <?php echo '<img src=',$image,'>';?>    </td>
                         <td> €  <?php echo  $price;?>    </td>
-                        <td>    <?php echo '<a href="',$button,'">','<button>','Go to Webshop','</button','</a>';?></td>
+                        <td>    <?php echo '<a href="',$button,'">','<input type="image" src="./assets/images/testcart.png" name="Submit" "width="70" height="70">','</a>';?></td>
                     </tr>
                 <?php
                     }
