@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="./assets/css/popup.css">
 
         <!--Calendar-->
-        <link rel="stylesheet" href="./fullcalendar/fullcalendar.min.css"/>
+        <link rel="stylesheet" href="./fullcalendar/fullcalendar.min.css" />
         <link rel="stylesheet" href="./fullcalendar/calendar-style.css">
         
         <title>User Home</title>      
