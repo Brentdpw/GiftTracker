@@ -253,7 +253,7 @@
             <h1> <?php echo $_GET['product'] ?> </h1>
             <table>
                 <tr>
-                    <th>Salesperson</th>
+                    <th>Brand</th>
                     <th>Product Name</th>
                     <th>Product Image</th>
                     <th>Product Price</th>
