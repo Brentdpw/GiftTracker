@@ -53,6 +53,7 @@ for items in productDelivery[:12]:
 
 # productSeller = soup.find('div', {'class': 'product-seller'})
 # print("Product seller: " + productSeller.get_text().strip())
+
 productButton = soup.find_all('a', {'data-test': 'product-title'}, href = True)
 buttonList = []
 for items in productButton[:12]:
