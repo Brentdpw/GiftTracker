@@ -91,6 +91,8 @@ $(document).ready(function () {
             // elementButtonSearch.addEventListener("click", function(){
                 // reloadPage();
             // };
+
+            console.log("test");
             
             elementButtonDelete.addEventListener("click", function(){
                 $.ajax({

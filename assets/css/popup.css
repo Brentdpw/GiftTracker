@@ -3,7 +3,7 @@
     position:absolute;
     margin: 285px 42vw;
     width:300px;
-    height:450px;
+    height:380px;
     font-family:verdana;
     font-size:13px;
     text-align: left;
@@ -104,7 +104,7 @@ input[type=date], select {
     position:absolute;
     margin: 285px 42vw;
     width:300px;
-    height:515px;
+    height:440px;
     font-family:verdana;
     font-size:13px;
     text-align: left;
