@@ -31,7 +31,7 @@
                 <?php echo "<p class='icon'>" . $_SESSION['username'] . "</p>"; ?>                
                 <nav>
                     <ul>
-                        <li><a href="User-edit-user.php">Settings</a></li>
+                        <li><a href="user-edit-user.php">Settings</a></li>
                         <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </nav>                
