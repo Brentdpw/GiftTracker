@@ -248,15 +248,15 @@
             $result = $conn->query($sql);
             $conn->close();
         ?>
-
+        
         <div>
-            <h1>Products</h1>
+            <h1> <?php echo $_GET['product'] ?> </h1>
             <table>
                 <tr>
                     <th>Salesperson</th>
-                    <th>Products Name</th>
-                    <th>Products Image</th>
-                    <th>Products Price</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Product Price</th>
                     <th>Check out the website</th>
                 </tr>
 
