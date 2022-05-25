@@ -23,14 +23,14 @@ productCreator = soup.find_all('a', {'data-test' :'party-link'})
 # print("Product creator: " + productCreator.get_text())
 # print(len(productCreator))
 creatorList = []
-for items in productCreator[:5]:
+for items in productCreator[:12]:
     creator = items.get_text()
     creatorList.append(creator)
 
 productTitle = soup.find_all('div', {'class' :'product-title--inline'})
 # print("Product title: " + productTitle.get_text())
 titleList = []
-for items in productTitle[:5]:
+for items in productTitle[:12]:
     title = items.get_text().strip()
     titleList.append(title)
 
@@ -38,7 +38,7 @@ productPrice = soup.find_all('meta', {'itemprop': 'price'})
 # print("Product price: " + productPrice.get('content').replace('.', ',') + " euro")
 
 priceList = []
-for items in productPrice[:5]:
+for items in productPrice[:12]:
     price = items.get('content')#.replace('.', ',')+" euro" # + "€"
     priceList.append(price)
 
@@ -46,16 +46,17 @@ for items in productPrice[:5]:
 productDelivery = soup.find_all('div', {'class': 'product-delivery-highlight'})
 # print("Product delivery: " + productDelivery.get_text())
 deliveryList = []
-for items in productDelivery[:5]:
+for items in productDelivery[:12]:
     delivery = items.get_text()
     deliveryList.append(delivery)
 
 
 # productSeller = soup.find('div', {'class': 'product-seller'})
 # print("Product seller: " + productSeller.get_text().strip())
+
 productButton = soup.find_all('a', {'data-test': 'product-title'}, href = True)
 buttonList = []
-for items in productButton[:5]:
+for items in productButton[:12]:
     link = 'https://www.bol.com/' + str(items.get('href'))
     buttonList.append(link)
 # orderUrl = 'https://www.bol.com/' + productButton.get('href')
@@ -64,7 +65,7 @@ for items in productButton[:5]:
 productPhoto = soup.find_all('div', {"class" : "h-o-hidden"})
 # print(productPhoto.get('src'))
 imgList = []
-for photo in productPhoto[:5]:
+for photo in productPhoto[:12]:
     img = photo.find('img')#.attrs['src']
     image = img.get('src') or img.get('data-src')
     imgList.append(image)
@@ -75,10 +76,10 @@ for photo in productPhoto[:5]:
 
 
 
-#for n in range(5):
-    #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
-    #print()
-    #n+1
+for n in range(12):
+    print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    print()
+    n+1
 
 # for n in range(5):
 #     #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
@@ -94,7 +95,7 @@ mydb = mysql.connector.connect(
   database="ID361990_GiftTracker"
 )
 
-for n in range(0,5):
+for n in range(0,12):
     mycursor = mydb.cursor()
 
     sql = "INSERT INTO gift (zoekterm, seller, title, price, delivery, button, imgLink) VALUES (%s, %s, %s, %s, %s, %s, %s)"
