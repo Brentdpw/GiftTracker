@@ -76,10 +76,10 @@ for photo in productPhoto[:12]:
 
 
 
-for n in range(12):
-    print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
-    print()
-    n+1
+# for n in range(12):
+#     print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+#     print()
+#     n+1
 
 # for n in range(5):
 #     #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
