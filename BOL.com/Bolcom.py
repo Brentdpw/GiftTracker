@@ -76,10 +76,10 @@ for photo in productPhoto[:12]:
 
 
 
-# for n in range(12):
-#     print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
-#     print()
-#     n+1
+for n in range(12):
+    print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
+    print()
+    n+1
 
 # for n in range(5):
 #     #print(creatorList[n]+" "+titleList[n]+" "+priceList[n]+" "+deliveryList[n]+" "+buttonList[n]+" "+imgList[n])
@@ -95,7 +95,7 @@ mydb = mysql.connector.connect(
   database="ID361990_GiftTracker"
 )
 
-for n in range(0,5):
+for n in range(0,12):
     mycursor = mydb.cursor()
 
     sql = "INSERT INTO gift (zoekterm, seller, title, price, delivery, button, imgLink) VALUES (%s, %s, %s, %s, %s, %s, %s)"
