@@ -257,7 +257,7 @@
                     <th>Product Name</th>
                     <th>Product Image</th>
                     <th>Product Price</th>
-                    <th>Check out the website</th>
+                    <th>Check out the product on Bol.com</th>
                 </tr>
 
                 <?php
