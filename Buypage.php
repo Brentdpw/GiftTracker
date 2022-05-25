@@ -257,11 +257,7 @@
                     <th>Product Name</th>
                     <th>Product Image</th>
                     <th>Product Price</th>
-<<<<<<< HEAD
-                    <th>Check out the product on bol.com</th>
-=======
                     <th>Check out the product on Bol.com</th>
->>>>>>> 27a50ceb100d69000262dc51793fb88d20ed2644
                 </tr>
 
                 <?php
